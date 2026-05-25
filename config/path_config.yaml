@@ -1,0 +1,10 @@
+# 路径配置
+xfq_project:
+  root: "C:/Users/Administrator/Desktop/XFQ-Project"
+  templates: "${xfq_project.root}/pipeline/templates"
+  source_data: "${xfq_project.root}/pipeline/source"
+  reviews: "${xfq_project.root}/pipeline/reviews"
+
+langgraph_project:
+  root: "C:/Users/Administrator/Desktop/qy"
+  novels: "${langgraph_project.root}/novels"
