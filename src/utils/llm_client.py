@@ -41,8 +41,10 @@ class LLMClient:
                 "temperature": temperature,
                 "max_tokens": max_tokens,
                 "api_key": api_key,
-                "extra_body": {"enable_thinking": False},  # qwen3 需要此参数
             }
+            # qwen3 系列需要此参数
+            if "qwen3" in model.lower():
+                kwargs["extra_body"] = {"enable_thinking": False}
             if base_url:
                 kwargs["base_url"] = base_url
             self.llm = ChatOpenAI(**kwargs)

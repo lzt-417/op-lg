@@ -22,15 +22,15 @@
 - N1 读者画像 → reader-persona.md
 - N2 概念设计 → concept.md
 
-
 ### Day 2：设定 + 大纲 + 风格（N3 + N4 + N5）
-- N3 世界观与角色设定
-- N4 全书大纲
-- N5 风格指纹
+- N3 世界观与角色设定 → worldbuilding.md + characters.md + story_graph.md
+- N4 全书大纲 → outline-hook_arc.md + outline-arc_1~4.md
+- N5 风格指纹 → style_fingerprint.md
 
-### Day 3：写作（N6 + N7）
-- N6 章纲生成
-- N7 正文写作（5 章）
+### Day 3：写作（N6 + N7）✅ 已完成
+- N6 章纲生成 → ch01~03-outline.md
+- N7 正文写作 → ch01~03-draft.md（每章 ≥2200 字）
+- 输出验证 + 重试机制
 
 ### Day 4：审改（N8 + N9）
 - N8 三路审查（先串行）
@@ -64,6 +64,6 @@
 
 - **Provider：** 阿里云百炼（OpenAI 兼容）
 - **Base URL：** https://dashscope.aliyuncs.com/compatible-mode/v1
-- **Model：** qwen3-32b
+- **Model：** qwen-long
 
 > **周期：** 2 周

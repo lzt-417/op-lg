@@ -116,7 +116,7 @@ def test_n1_node(dry_run: bool = True):
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("Day 1 验证测试")
+    print("N1 节点验证测试")
     print("=" * 50)
 
     # 测试 Adapter 层
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     print("=" * 50)
 
     if adapter_ok and n1_ok:
-        print("\n[SUCCESS] Day 1 基础验证通过！")
+        print("\n[SUCCESS] N1 基础验证通过！")
         print("提示：设置 OPENAI_API_KEY 或 ANTHROPIC_API_KEY 环境变量后，可以运行实际 LLM 测试")
     else:
-        print("\n[ERROR] Day 1 验证失败，请检查错误信息")
+        print("\n[ERROR] N1 验证失败，请检查错误信息")

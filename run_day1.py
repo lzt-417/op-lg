@@ -4,6 +4,11 @@ Day 1 主运行脚本：运行 N1-N2 流程
 import os
 import sys
 
+# Windows GBK 编码修复
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.graph_builder import run_n1_n2
@@ -13,7 +18,7 @@ from src.state.planning_state import PlanningState
 # 阿里云百炼配置
 DASHSCOPE_API_KEY = "xxxxxx"
 DASHSCOPE_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-DASHSCOPE_MODEL = "qwen3-32b"  # 免费额度模型
+DASHSCOPE_MODEL = "qwen-long"
 
 
 def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):

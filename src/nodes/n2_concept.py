@@ -1,10 +1,10 @@
 """
 N2 节点：概念设计
 """
-from typing import Dict, Any
 from ..state.planning_state import PlanningState
 from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
+from ..utils.validators import validate_concept, retry_on_failure
 
 
 class N2ConceptNode:
@@ -19,27 +19,14 @@ class N2ConceptNode:
         self.source_adapter = source_adapter
 
     def __call__(self, state: PlanningState) -> PlanningState:
-        """
-        执行 N2 节点
-
-        Args:
-            state: 当前状态
-
-        Returns:
-            更新后的状态
-        """
         print("N2 节点：开始生成概念设计...")
 
         try:
-            # 检查前置条件
             if "reader_persona" not in state or not state["reader_persona"]:
                 raise ValueError("N1 未完成，缺少 reader_persona")
 
-            # 1. 读取源数据
-            print("  - 读取 diversity-pools...")
             diversity_pools = self.source_adapter.get_diversity_pools()
 
-            # 2. 构造 Prompt
             system_prompt = """你是 Novelist Agent。为小说项目生成 3-5 个概念方案，供选择。
 
 每个方案必须包含：
@@ -60,22 +47,27 @@ class N2ConceptNode:
 - 不要占位符，全部填具体内容
 - 在最后推荐一个最佳方案"""
 
-            user_prompt = f"""Reader Persona:
+            user_prompt = f"""读者画像：
 {state["reader_persona"]}
 
-Diversity Pools:
+多样性池：
 {diversity_pools}
 
-请基于以上信息生成 3-5 个概念方案，并推荐一个最佳方案。"""
+请基于以上信息生成 3-5 个概念方案，并推荐一个最佳方案。
+注意：全部使用中文输出（专有名词如书名、平台名、术语可保留英文）。"""
 
-            # 3. 调用 LLM
             print("  - 调用 LLM 生成概念方案...")
-            concept = self.llm_client.invoke_with_system(
+            concept = retry_on_failure(
+                self.llm_client.invoke_with_system, 2,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
             )
 
-            # 4. 更新 State
+            # 验证输出
+            ok, msg = validate_concept(concept)
+            if not ok:
+                raise ValueError(f"输出验证失败：{msg}")
+
             state["concept"] = concept
             state["current_node"] = "n2"
 

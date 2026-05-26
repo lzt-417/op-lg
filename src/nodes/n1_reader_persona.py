@@ -1,11 +1,11 @@
 """
 N1 节点：读者画像生成
 """
-from typing import Dict, Any
 from ..state.planning_state import PlanningState
 from ..adapters.template_adapter import TemplateAdapter
 from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
+from ..utils.validators import validate_reader_persona, retry_on_failure
 
 
 class N1ReaderPersonaNode:
@@ -22,40 +22,31 @@ class N1ReaderPersonaNode:
         self.source_adapter = source_adapter
 
     def __call__(self, state: PlanningState) -> PlanningState:
-        """
-        执行 N1 节点
-
-        Args:
-            state: 当前状态
-
-        Returns:
-            更新后的状态
-        """
         print("N1 节点：开始生成读者画像...")
 
         try:
-            # 1. 读取模板和源数据
-            print("  - 读取读者画像数据库...")
             database = self.source_adapter.get_reader_persona_database()
-
-            print("  - 读取模板...")
             template = self.template_adapter.get_reader_persona_template()
 
-            # 2. 构造 Prompt
             system_prompt = template
-            user_prompt = f"""Reader Persona Database:
+            user_prompt = f"""读者调研数据库：
 {database}
 
-请基于以上调研数据，生成一个完整的读者画像。严格遵循模板格式，不要使用占位符，全部填入具体内容。"""
+请基于以上调研数据，生成一个完整的读者画像。严格遵循模板格式，不要使用占位符，全部填入具体内容。
+注意：全部使用中文输出（专有名词如书名、平台名可保留英文）。"""
 
-            # 3. 调用 LLM
             print("  - 调用 LLM 生成读者画像...")
-            reader_persona = self.llm_client.invoke_with_system(
+            reader_persona = retry_on_failure(
+                self.llm_client.invoke_with_system, 2,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
             )
 
-            # 4. 更新 State
+            # 验证输出
+            ok, msg = validate_reader_persona(reader_persona)
+            if not ok:
+                raise ValueError(f"输出验证失败：{msg}")
+
             state["reader_persona"] = reader_persona
             state["current_node"] = "n1"
 
