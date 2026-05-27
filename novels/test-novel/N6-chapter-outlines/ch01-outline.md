@@ -1,27 +1,18 @@
-**Function Tag**: **Reveal** *(Hook Arc — standalone ontological rupture; not “progression” yet, but the irreversible ignition of it)*  
-**Scene Rhythm**: 🟢 (Opening breath) → 🔴 (Pulse & Exhale) → 🔴 (Shadow loss) → 🟡 (Nesta’s arrival) → 🔴 (The Scratch)  
+**功能标签**：推进  
+**章节问题**：主角能否在第一层存活下来？  
+**状态变化**：从普通上班族转变为“流浪者”，开始理解塔楼的危险性。  
+**章末钩子**：主角险些丧命，但最终逃脱，留下一个未解的谜团——塔楼为何会改变结构？  
+**伏笔任务**：埋（塔楼是活的）、推（第一层规则）、收（无）  
 
-**Chapter Question**: *Did Elian transcribe a dying man’s last word — or unwrite tomorrow itself?*  
+**节奏标注**：  
+- 🟢 低（进入塔楼、环境描写）  
+- 🟡 中（遭遇陷阱、逃脱过程）  
+- 🔴 高（生死一线、最后逃脱）  
 
-**State Change**:  
-- **External**: Elian’s left hand casts no shadow; wall bears inert amber dust-shape of *“tâl”*; slate holds only a chalk-smudged question mark.  
-- **Internal**: His mantra fractures from *“Say it true. Say it whole.”* to *“Say it…?”* — certainty replaced by embodied uncertainty.  
-- **Information**: He now *feels* silence as pressure (taste of iron, weight behind eyes); knows ink pulses and stone exhales — but still doesn’t know Rhys’s utterance was *interrupted warning*, not farewell.  
+**场景节奏**：  
+- **低能量**：莱恩被卷入塔楼，意识到这不是普通的事故。  
+- **中能量**：他发现塔楼的第一层充满陷阱和未知的危险。  
+- **高能量**：在一次致命的陷阱中，他几乎丧命，靠直觉和运气逃脱。  
 
-**Chapter-End Hook**: **Reveal + Suspense**  
-> The chalk dust hung — then reformed: *“tâl…?”* — glowing, unstable, alive.  
-> The wall sighed. Ash tasted of burnt almonds again.  
-> *(Last line lands on sensory return — same scent, new meaning — implying cyclical consequence, not closure. Reader must turn page to learn: Why does the almond taste return? What does the glyph’s glow demand?)*  
-
-**Foreshadowing Tasks**:  
-- **埋**: Chalk’s basalt density & mineral scent (line 492 — “cool, unyielding, smelling faintly of wet stone, not ash”) → F04 (Ink-Quarry Bargain), F12 (Living Lexicon).  
-- **埋**: Nesta’s copper-wire reed braid humming at 440Hz when Elian’s hand trembles (line 382) → F06 (Kaelen’s tuning fork), F10 (breath-frequency resonance).  
-- **推**: Burnt-almond scent — appears in opening (ash-ink), returns in closing (wall’s sigh) → advances F01’s bleed-rule: sensory echoes persist as memory residue.  
-- **收**: None — this is pure ignition. No prior arc exists to close.  
-
-**Rhythm Compliance Check**:  
-- ✅ Five scenes, three 🔴 (Pulse, Shadow, Scratch), two non-consecutive (🟢/🟡 break intensity)  
-- ✅ Chapter ends on high-energy glyph *but* with returning low-energy sensory anchor (almond taste) — satisfies RR’s “hook” + KU’s “resonance”  
-- ✅ No exposition: worldbuilding via action (stone exhales), dialogue (none), consequence (shadow-loss)  
-
-**Word Count Alignment**: 500 words — tight, voice-locked, zero passive voice, all anchors embedded (ash-ink smell, pebble-rattle breath, light-through-bone absence).
+**章纲内容**：  
+莱恩·克劳斯在一次意外中被卷入一座神秘的塔楼，发现自己身处一个完全陌生的世界。他试图寻找出口，却不断遭遇各种机关与陷阱。随着探索的深入，他逐渐意识到塔楼并非静态结构，而是“活”的存在。在一次致命的陷阱中，他差点丧命，但凭借冷静的判断和运气成功逃脱。这一章以莱恩的幸存为转折点，也为后续揭示塔楼的秘密埋下伏笔。

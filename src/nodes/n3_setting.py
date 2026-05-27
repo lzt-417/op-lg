@@ -6,7 +6,7 @@ from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
 from ..utils.validators import (
     validate_worldbuilding, validate_characters, validate_story_graph,
-    validate_keyword, retry_on_failure,
+    validate_keyword, retry_on_validation_failure,
 )
 
 
@@ -35,28 +35,30 @@ class N3SettingNode:
 
             diversity_pools = self.source_adapter.get_diversity_pools()
 
-            # Step 1: 生成世界观 + 角色设定
+            # Step 1: 生成世界观 + 角色设定（带验证重试）
             print("  - Step 1: 生成世界观与角色设定...")
-            worldbuilding, characters = self._generate_world_and_characters(
-                state["concept"], diversity_pools
+            result = retry_on_validation_failure(
+                self._generate_world_and_characters, self._validate_world_characters, 2,
+                concept=state["concept"], diversity_pools=diversity_pools,
             )
+            worldbuilding = self._extract_section(result, "WORLDBUILDING")
+            characters = self._extract_section(result, "CHARACTERS")
 
-            # Step 2: 生成剧情关系图
+            if not worldbuilding or not characters:
+                parts = result.split("---")
+                if len(parts) >= 2:
+                    worldbuilding = worldbuilding or parts[0].strip()
+                    characters = characters or parts[1].strip()
+                else:
+                    worldbuilding = worldbuilding or result
+                    characters = characters or result
+
+            # Step 2: 生成剧情关系图（带验证重试）
             print("  - Step 2: 生成剧情关系图...")
-            story_graph = self._generate_story_graph(
-                state["concept"], worldbuilding, characters
+            story_graph = retry_on_validation_failure(
+                self._generate_story_graph, validate_story_graph, 2,
+                concept=state["concept"], worldbuilding=worldbuilding, characters=characters,
             )
-
-            # 验证输出
-            ok, msg = validate_worldbuilding(worldbuilding)
-            if not ok:
-                raise ValueError(f"worldbuilding 验证失败：{msg}")
-            ok, msg = validate_characters(characters)
-            if not ok:
-                raise ValueError(f"characters 验证失败：{msg}")
-            ok, msg = validate_story_graph(story_graph)
-            if not ok:
-                raise ValueError(f"story_graph 验证失败：{msg}")
 
             state["world_setting"] = worldbuilding
             state["character_cards"] = characters
@@ -71,7 +73,10 @@ class N3SettingNode:
             print(f"N3 节点失败：{str(e)}")
             return state
 
-    def _generate_world_and_characters(self, concept: str, diversity_pools: str):
+    def _generate_world_and_characters(self, **kwargs) -> str:
+        concept = kwargs["concept"]
+        diversity_pools = kwargs["diversity_pools"]
+
         system_prompt = """你是 Novelist Agent。为小说项目生成世界观设定和角色设定。
 
 ## worldbuilding.md 必须包含
@@ -108,12 +113,12 @@ class N3SettingNode:
 
 请基于以上信息生成世界观设定和角色设定。全部使用中文输出。"""
 
-        result = retry_on_failure(
-            self.llm_client.invoke_with_system, 2,
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
+        return self.llm_client.invoke_with_system(
+            system_prompt=system_prompt, user_prompt=user_prompt,
         )
 
+    def _validate_world_characters(self, result: str, **kwargs) -> tuple:
+        """验证世界观+角色设定的输出"""
         worldbuilding = self._extract_section(result, "WORLDBUILDING")
         characters = self._extract_section(result, "CHARACTERS")
 
@@ -126,9 +131,19 @@ class N3SettingNode:
                 worldbuilding = worldbuilding or result
                 characters = characters or result
 
-        return worldbuilding, characters
+        ok, msg = validate_worldbuilding(worldbuilding)
+        if not ok:
+            return False, f"worldbuilding: {msg}"
+        ok, msg = validate_characters(characters)
+        if not ok:
+            return False, f"characters: {msg}"
+        return True, ""
 
-    def _generate_story_graph(self, concept: str, worldbuilding: str, characters: str):
+    def _generate_story_graph(self, **kwargs) -> str:
+        concept = kwargs["concept"]
+        worldbuilding = kwargs["worldbuilding"]
+        characters = kwargs["characters"]
+
         system_prompt = """你是 Novelist Agent。为小说项目生成剧情关系图。
 
 ## story_graph.md 必须包含
@@ -152,10 +167,8 @@ class N3SettingNode:
 
 请基于以上信息生成剧情关系图。全部使用中文输出。"""
 
-        return retry_on_failure(
-            self.llm_client.invoke_with_system, 2,
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
+        return self.llm_client.invoke_with_system(
+            system_prompt=system_prompt, user_prompt=user_prompt,
         )
 
     def _extract_section(self, text: str, tag: str) -> str:

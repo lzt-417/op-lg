@@ -1,30 +1,18 @@
-**Function Tag**: **Transition** *(Not “transition” as filler — but ontological recalibration: the first breath after the world cracks open)*  
-**Scene Rhythm**: 🟢 (Dawn in Hollow Lexicon stairwell) → 🟡 (Elian tests shadow-loss with candlelight) → 🟢 (Nesta’s silent breakfast ritual) → 🔴 (First failed transcription attempt — slate rejects “yesterday”)  
+**功能标签**：日常  
+**章节问题**：莱恩能否找到盟友？  
+**状态变化**：从独狼转变为有初步合作意识的探索者。  
+**章末钩子**：莱恩遇到卡尔，但两人之间充满猜疑，是否值得信任仍存疑问。  
+**伏笔任务**：埋（卡尔的过去）、推（第一层规则）、收（无）  
 
-**Chapter Question**: *If language holds reality — what happens when you try to speak the day before the unraveling?*  
+**节奏标注**：  
+- 🟢 低（日常生活细节、心理活动）  
+- 🟡 中（与卡尔的初次相遇、对话）  
+- 🔴 高（试探与信任的界限）  
 
-**State Change**:  
-- **External**: Elian discovers his shadow-loss *only affects left hand* — right hand casts normal shadow; slate refuses *any* word containing past-tense morphology (“yest-”, “-ed”, “-dun”).  
-- **Internal**: He stops correcting his own breath-rhythm — lets it hitch, uncontrolled. Begins tracing letters *in air*, not ash.  
-- **Information**: Learns Nesta’s reed braid hums *only when semantic stress exceeds threshold* — she’s been tracking his syntax decay since Ch1.  
+**场景节奏**：  
+- **低能量**：莱恩在塔楼中休整，回忆自己的处境，内心充满不安。  
+- **中能量**：他遇到一位冷酷的战士卡尔，两人短暂交流，彼此保持警惕。  
+- **高能量**：在一次试探中，卡尔展现出战斗能力，暗示他可能不是单纯的路人。  
 
-**Chapter-End Hook**: **Threat + Revelation**  
-> He wrote *“yesterday”* again.  
-> The chalk snapped.  
-> Not at the tip — at the *syllable break*.  
-> And for the first time, Nesta made a sound: a single, clear *click*, identical to Elder Rhys’s final utterance.  
-> *(Reader knows: that click isn’t mimicry. It’s calibration. And it just echoed across time — with consequences.)*  
-
-**Foreshadowing Tasks**:  
-- **埋**: Nesta’s click vibrates the dust on the stairwell wall — revealing faint, older glyphs beneath ash layer (line 317) → F07 (Sub-Lexicon Archives), F09 (Rhys’s hidden lexicon).  
-- **推**: Basalt chalk’s coolness deepens when Elian writes near Nesta — confirms F04’s quarry link (Kaelen mined mother’s grave-stone).  
-- **收**: None — still early arc.  
-
-**Rhythm Compliance Check**:  
-- ✅ First daily-life chapter after Hook Arc — fulfills “daily life → trigger event → forced choice” trilogy (Ch1=trigger, Ch2=daily life *under new physics*, Ch3=forced choice)  
-- ✅ 🟢/🟡/🟢/🔴 rhythm avoids monotony; ends on 🔴 but with *auditory* hook (click), not visual — fresh sensory channel  
-- ✅ Introduces *no new characters* — focuses solely on Elian/Nesta recalibration  
-
-**Worldbuilding Integration**:  
-- Vowel Moors referenced indirectly: Nesta’s breakfast tea steams with visible *ā*-shaped vapor — Elian notices it *holds shape longer than usual*, hinting resonance zones are destabilizing.  
-- Locative Wastes implied: Elian tries to name the stairwell *“in the hollow”* — slate stays blank; only *“at the spiral’s lip”* yields faint warmth.
+**章纲内容**：  
+莱恩在塔楼中暂时安顿下来，开始适应这个陌生的环境。他在一处废弃的角落遇见了卡尔，一个沉默寡言但实力强大的战士。两人虽然初次见面，却因共同的目标而产生短暂的合作。然而，卡尔的过去仍是一个谜，他的行为举止透露出某种不寻常的背景。这一章通过两人的互动，展现了角色之间的初步关系，并为后续的背叛与信任冲突埋下伏笔。

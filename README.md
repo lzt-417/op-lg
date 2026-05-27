@@ -14,7 +14,15 @@ qy/
 │   │   ├── n4_outline.py
 │   │   ├── n5_style.py
 │   │   ├── n6_chapter_outline.py
-│   │   └── n7_chapter_writing.py
+│   │   ├── n7_chapter_writing.py
+│   │   ├── n8_review.py
+│   │   └── n9_merge_fix.py
+│   ├── guides/            # 审查指南
+│   │   ├── logic_review_guide.md
+│   │   ├── adversarial_edit_guide.md
+│   │   ├── prose_review_guide.md
+│   │   ├── merge_rules.md
+│   │   └── ai_patterns_blacklist.md
 │   ├── state/             # 状态定义
 │   │   └── planning_state.py
 │   ├── adapters/          # 适配层（复用XFQ-Project资源）        
@@ -36,6 +44,7 @@ qy/
 ├── run_day1.py            # Day 1 运行脚本（N1-N2）
 ├── run_day2.py            # Day 2 运行脚本（N1-N5）
 ├── run_day3.py            # Day 3 运行脚本（N1-N7）
+├── run_day4.py            # Day 4 运行脚本（N1-N9）
 └── requirements.txt       # Python 依赖
 ```
 
@@ -83,7 +92,20 @@ qy/
 
 **测试结果：**
 
-### Day 4：审改（N8 + N9）- 待实现
+
+### Day 4：审改（N8 + N9）
+
+**已实现：**
+- N8 节点：三路审查（逻辑审查 + 对抗编辑 + 文笔审查）
+- N9 节点：合并修复（合并三份报告 → 生成修复指令 → 修复正文）
+- 审查指南（logic_review_guide / adversarial_edit_guide / prose_review_guide）
+- 合并规则（merge_rules）
+- AI 写作负面清单（ai_patterns_blacklist）
+- Graph 构建（N1 → ... → N7 → N8 → N9 线性流）
+
+**测试结果：**
+- N8 产出（logic-review / adversarial-review / prose-review）：[OK] 通过
+- N9 产出（editor-review + 修复后正文）：[OK] 通过
 
 ### Day 5：交付 + 验证（N10）- 待实现
 
@@ -110,13 +132,16 @@ export ANTHROPIC_API_KEY='your-key'
 ### 3. 运行
 
 ```bash
-# 运行完整 N1-N7 流程（Day 1 + Day 2 + Day 3）
+# 运行完整 N1-N9 流程（Day 1-4，写作 + 审改）
+python run_day4.py
+
+# 或仅运行 N1-N7（Day 1-3，写作）
 python run_day3.py
 
-# 或仅运行 N1-N5（Day 1 + Day 2）
+# 或仅运行 N1-N5（Day 1-2，设定 + 大纲）
 python run_day2.py
 
-# 或仅运行 N1-N2（Day 1）
+# 或仅运行 N1-N2（Day 1，规划启动）
 python run_day1.py
 ```
 

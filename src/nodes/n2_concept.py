@@ -4,7 +4,7 @@ N2 节点：概念设计
 from ..state.planning_state import PlanningState
 from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_concept, retry_on_failure
+from ..utils.validators import validate_concept, retry_on_validation_failure
 
 
 class N2ConceptNode:
@@ -57,16 +57,11 @@ class N2ConceptNode:
 注意：全部使用中文输出（专有名词如书名、平台名、术语可保留英文）。"""
 
             print("  - 调用 LLM 生成概念方案...")
-            concept = retry_on_failure(
-                self.llm_client.invoke_with_system, 2,
+            concept = retry_on_validation_failure(
+                self._generate, validate_concept, 2,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
             )
-
-            # 验证输出
-            ok, msg = validate_concept(concept)
-            if not ok:
-                raise ValueError(f"输出验证失败：{msg}")
 
             state["concept"] = concept
             state["current_node"] = "n2"
@@ -78,3 +73,6 @@ class N2ConceptNode:
             state["last_error"] = f"N2 节点失败：{str(e)}"
             print(f"N2 节点失败：{str(e)}")
             return state
+
+    def _generate(self, **kwargs) -> str:
+        return self.llm_client.invoke_with_system(**kwargs)

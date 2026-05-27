@@ -1,332 +1,159 @@
-# Chapter 2 — *The Day Before the Unraveling*
+# Chapter 1 — The Tower's First Breath
 
-Dawn in the Hollow Lexicon stairwell didn’t arrive with light. It arrived with *absence*.
+Panic surged through me. I was in a strange place. I froze. Something was wrong. I could feel it in my bones. 'I'm not dreaming,' I muttered, shaking my head. 'This is real.' I had to stay calm. If I panicked, I would be lost.
 
-First, the ash-haze thinned—not cleared, never cleared—but *receded*, like breath drawn back from a threshold. A slow, viscous withdrawal from the stone spirals, leaving behind damp granite that exhaled cold air smelling of wet flint and old ink. Then, silence deepened—not the hollow quiet of empty rooms, but the *tension before resonance*, the held breath before a vowel hums into being. My own lungs hitched. Not a gasp. Not a sigh. A *catch*. Like my ribs had forgotten the rhythm and were relearning it mid-inhale.
+The walls were tall, made of dark stone that shimmered in the dim light, with no windows or doors—just endless corridors stretching into the unknown. The deafening silence surrounded me in this tower, with no guarantee I'd ever see the outside world again.
 
-I stood on the seventh step—always the seventh—and watched the last swirl of grey haze coil away from the wall where Rhys’s final glyph had pulsed last night: *tâl…?*  
+Where am I? No, seriously—where AM I? This isn't some weird dream, right? Because if it is, someone forgot to tell my back about it. It's been screaming in protest since I woke up on this cold stone floor.
 
-It was gone now. Not erased. *Unwritten.* The granite bore only its ancient grain, dark and veined with quartz that caught no light. No glow. No warmth. Just stone. Just cold.
+I took a deep breath, forcing myself to stay focused. I had to think. I had to act. I shook my head, trying to clear my thoughts. I couldn't afford to get distracted.
 
-I flexed my left hand.
+The air hung thick and heavy around me, tasting of ancient dust and something else... something metallic and old, like blood that had dried centuries ago. My skin prickled with an unnatural cold—not like winter's bite, but like something ancient recognizing its kin.
 
-No shadow fell from it.
+This place... it's not just a building. It's alive. I can feel it in the way the walls seem to breathe, in the subtle shifts beneath my feet, in the way the darkness ahead isn't truly empty.
 
-Not on the step. Not on the wall. Not even when I held it palm-up beneath the single high slit of stained glass—where weak dawn-light bled through fractured cobalt and ochre, painting the dust motes in bruised gold. My right hand, resting beside it on the cool stone, cast a clean, sharp silhouette: fingers distinct, knuckles defined, the faint tracery of veins visible as darker lines beneath pale skin. But the left? Nothing. As if the light passed *through* it, not around it. As if the hand existed only in the present tense—no past to cast backward, no future to lean into.
+I always thought I was a cautious person, but this place was different. Here, caution wasn't enough. Here, caution might get you killed.
 
-I lowered it. Felt the weight return—not of bone or muscle, but of *consequence*. The chalk in my right hand was cool. Basalt, not limestone. Kaelen’s quarry chalk. The kind that hummed faintly when you held it near living breath, the kind that tasted of iron and rainwater when you licked your thumb and rubbed it across the tip. I’d used it for years. Never questioned why it felt *denser*, more *attentive*, than the softer chalks from the Moors’ chalk-pits. Now, holding it while my left hand hovered just above the slate resting on the step, the coolness deepened. Not a chill. A *settling*. Like the stone itself leaning in.
+I turned around, my eyes scanning the darkness. The corridor behind me had disappeared. It was gone. Just like the rest of the world I had known.
 
-I didn’t write yet.
+"Great," I whispered to myself. "Just great. Lost in some weird tower that eats hallways. What's next, talking walls?"
 
-I traced.
+No response. Not that I really expected one.
 
-Fingertips—left hand—moved through the air above the slate. Not touching. Just *shaping*. The curve of *ā*. The sharp downward stroke of *k*. The closed circle of *o*. Letters without substance. Without consequence. Air-letters. My breath hitched again. I let it. Didn’t correct it. Didn’t force the three-blink pause before thought. Just let the air rasp in, uneven, uncalibrated. The first time in twelve years I hadn’t corrected my own breath-rhythm.
+The first rule of this place... I need to figure it out. Kalen mentioned something about rules governing each layer, but that was before. Before I fell through that hole. Before I ended up here.
 
-A sound came from below.
+This layer seems different. Quieter. More... watchful. The walls don't just shimmer; they seem to pulse with a faint, internal light that shifts color when I move. Sometimes blue, sometimes purple, occasionally a sickly green that makes my stomach clench.
 
-Not footsteps. Not a cough. A *scrape*. Soft, rhythmic, precise. Like a reed stalk dragged once, slowly, across dry clay.
+I'm not sure how long I've been walking. Time feels different here. The air grows colder with each step, and the glow from the walls dims slightly. Is that a rule? Don't make the walls angry? Or is it something else?
 
-Nesta.
+The tower's rules seem simple at first glance—survive, don't get lost, don't touch anything that looks suspicious. But there's more to it. I can feel it. The way the corridors shift when I'm not looking, the way the floor sometimes gives way beneath my feet only to solidify an inch before I fall.
 
-She appeared at the base of the spiral, barefoot on the worn stone. Her hair, black as basalt dust, was braided tight with dried reeds—thin, pale-gold stems from the Vowel Moors’ marsh-fringe. She carried no basket, no bowl. Just her hands, folded loosely at her waist. Her eyes—wide, the colour of river-polished shale—found mine. Held. Not questioning. Not waiting. *Registering.*
+This isn't just a test of strength or agility. It's a test of awareness. Of perception. Of... understanding.
 
-She walked up. Not to me. Past me. To the small alcove carved into the wall three steps above—the one with the shallow stone basin, the one Rhys had used for washing ink-stained fingers. She knelt. Reached into the basin. Not for water—there was none. For the thin layer of fine, grey ash that always settled there overnight, sifted down from the higher vaults. She dipped two fingers in, then brought them to her lips. Not to taste. To *moisten*. Then, she pressed those damp fingers to the reed braid at her temple.
+I stopped dead in my tracks, my breath catching in my throat.
 
-It began.
+Did the wall just... move?
 
-A low, soft *hum*. Not from her throat. From the reeds themselves. A vibration so fine it made the ash on the basin’s rim tremble. It wasn’t a note. It was a *stress*. A semantic weight settling onto a syllable. *Ā.* The long, open vowel. The one that anchored memory, that held kinship names steady in the Moors’ fog. The hum deepened, resonating in my molars, in the fillings Rhys had placed when I was twelve. It wasn’t loud. It was *insistent*. And it *changed*.
+Not much. Just a subtle shifting, like a muscle twitching beneath skin. But it moved. And I saw it. The stone pattern rearranged itself, forming a face for less than a second before returning to its previous state.
 
-When my left hand twitched—just a flicker of the index finger—the hum sharpened. A micro-shift in pitch. When I took a breath that caught too hard, the reeds vibrated faster, the ash jumping in tiny, frantic leaps. When I traced *ā* in the air again, the hum softened, smoothed, held the vowel longer, warmer.
+Okay. Deep breaths, Lane. You're hallucinating. Stress-induced hallucination. That's all. Nothing to see here. Except that face. That definitely wasn't there before.
 
-She wasn’t humming *at* me.
+I took a step back, my hand instinctively going to the knife I still had from... from before. Before this place. Before I woke up here with nothing but the clothes on my back and this persistent feeling of déjà vu.
 
-She was humming *my syntax*.
+The wall didn't move this time. But I could feel it watching me. Waiting.
 
-Tracking its decay. Measuring its stress. Calibrating to the fracture in my own grammar.
+What if the rules aren't just about survival? What if they're about observation? What if the tower rewards those who notice the subtle changes, the hidden patterns?
 
-I looked down at my left hand, hovering over the slate. The absence of shadow wasn’t just visual. It felt *lighter*. Not weightless. *Unanchored.* As if the hand existed only in the immediate, the tangible, the *now*—no history to drag it down, no future to pull it forward. A terrifying freedom.
+Or maybe I'm just grasping at straws. Maybe I'm going to die here, and my last thought will be about how I totally should have paid more attention in that architecture class back home.
 
-I picked up the stylus. Basalt. Cool. Settled.
+Architecture class. Ha. As if that would help now. "Professor, how do I escape a sentient tower that eats hallways and makes creepy stone faces?"
 
-I wrote.
+Yeah. No. That conversation would go over real well.
 
-*YESTERDAY.*
+I moved forward slowly, deliberately, watching the walls for any more... movements. Nothing. Just the same shifting patterns, the same pulsing lights. The same unnerving silence.
 
-Chalk met slate. A soft, dry *shush*. The word formed cleanly. Sharp angles. Solid strokes. *Y-E-S-T-E-R-D-A-Y.* Eight letters. One past-tense morpheme. One temporal anchor sunk deep into the bedrock of language.
+Then I heard it. A whisper. Not from ahead, not from behind, but from the walls themselves. From the stone beneath my feet. From the air around me.
 
-The slate didn’t glow.
+It wasn't words, not exactly. More like... fragments. Pieces of meaning that floated through my mind before dissolving back into the silence.
 
-It didn’t warm.
+"...watching..."
 
-It didn’t *breathe*.
+"...listening..."
 
-It just… *refused*.
+"...chosen..."
 
-The chalk line for the ‘Y’ stayed white. The ‘E’ stayed white. The ‘S’—a clean, confident stroke—stayed white. But at the ‘T’, the chalk *skipped*. Not broke. *Skipped.* As if the slate’s surface had momentarily turned slick, repelling the mineral. The ‘T’ was a ghost-stroke, barely visible. The ‘E’ after it was fainter still. By the time I reached the ‘R’, the chalk was dragging, leaving only a whisper of grey dust. The ‘D’ dissolved into nothing. The ‘A’ was a smudge. The ‘Y’—the final, anchoring letter—wasn’t written at all. Just a faint, trembling indentation in the slate’s surface, like a footprint in wet sand.
+I stopped again, my heart pounding against my ribs. The air grew thick, heavy with unspoken words. The walls seemed to lean in, the stone patterns swirling like disturbed water.
 
-I stared.
+"Hello?" I called out, my voice echoing strangely in the silence. "Is someone there?"
 
-My breath hitched again. Deeper this time. A raw scrape in my throat.
+No answer. But the whispering returned, louder this time. More insistent.
 
-I lifted the stylus. Looked at my left hand. Still no shadow. Looked at my right. Shadow sharp, real, *present*. I held the stylus in my right hand, but the writing—the *failure*—had been done by the left. The hand without a past.
+"...not alone..."
 
-I tried again.
+"...many eyes..."
 
-*YESTERDAY.*
+"...first test..."
 
-Same result. The ‘T’ skipped. The ‘D’ dissolved. The ‘Y’ vanished.
+The first test. That's what it said. The first test. So there are more. More tests. More layers. More... whatever this is.
 
-I tried *yest*. Just the root. The slate stayed blank.
+I swallowed hard, my mouth suddenly dry. The floor beneath my feet grew colder, the stone turning from smooth to rough, from solid to... something else. Something that felt like it was breathing.
 
-*Yesternight.* Blank.
+Okay. New rule. Don't stay in one place too long. Especially when the floor starts breathing. That seems like a pretty solid rule to live by.
 
-*Yesterday’s.* Blank.
+I started walking again, faster this time, my eyes scanning the darkness ahead. The corridor twisted and turned, sometimes branching into paths that disappeared into shadow, sometimes narrowing to barely accommodate my shoulders.
 
-*Had.* Blank.
+The walls pulsed with a faint blue light now, casting long shadows that danced and writhed like living things. I kept my hand on the knife, though I wasn't sure what good it would do against... whatever this place was.
 
-*Was.* Blank.
+The whispering continued, but it was different now. More focused. More... personal.
 
-*Did.* Blank.
+"...afraid..."
 
-Every word carrying the weight of the past—every inflection, every suffix, every auxiliary verb—met the slate’s surface and *slipped*. Like water on oiled stone. Like breath on cold glass.
+"...alone..."
 
-Only words rooted entirely in the present, the imperative, the eternal now, held form:
+"...remember..."
 
-*Is.*  
-*Am.*  
-*Be.*  
-*Here.*  
-*Now.*  
-*This.*
+Remember what? I don't remember anything except waking up here. Except this nagging feeling that I should know this place, that I should recognize these walls, these corridors.
 
-I wrote *this*. The chalk flowed, warm, sure. The letter ‘T’ was solid. The ‘H’ hummed faintly against the slate. The ‘I’ was clear. The ‘S’—a sharp, decisive stroke—left a mark that glowed with a soft, internal amber light for three heartbeats before fading.
+I shook my head, trying to clear the thoughts. No use dwelling on it now. Focus on the present. Focus on surviving.
 
-I looked up.
+The corridor ended abruptly, opening into a circular chamber. The ceiling was lost in shadow, but the walls rose around me, covered in symbols that glowed with the same pulsing blue light. In the center of the room stood a pedestal, on which rested a single, unlit torch.
 
-Nesta was watching. Not the slate. Me. Her head tilted, just slightly. The reed braid hummed, low and steady. *Ā.* Anchoring.
+I approached cautiously, my eyes scanning the room for any signs of movement, any hidden traps. The symbols on the walls seemed to shift as I moved, their patterns changing, rearranging themselves into new configurations.
 
-I tried a different approach. Not a word. A *place*.
+"...approaching..."
 
-*In the hollow.*
+"...accepting..."
 
-The slate remained inert. Cold. Dead.
+"...beginning..."
 
-*At the spiral’s lip.*
+I reached the pedestal and stared at the torch. It looked ordinary enough, just a simple iron handle with a bit of cloth wrapped around the top. But I could feel something emanating from it, something that resonated with the symbols on the walls.
 
-The chalk warmed. Not much. A subtle pulse against my fingertip. The ‘A’ glowed faintly, a soft, hesitant blue. The ‘T’ held its shape. The ‘s’—a curling, confident stroke—left a trail of fine, silver dust that didn’t settle, but *hovered*, vibrating almost imperceptibly.
+What if this is part of the test? What if I'm supposed to take it? Or light it? Or ignore it completely?
 
-Locative Wastes logic. Naming the *edge*, not the interior. The boundary, not the bounded. The slate responded to precision of *relation*, not just of time. It demanded grammar that acknowledged position, tension, the knife-edge between states.
+I hesitated, my hand hovering just above the torch. The whispering grew louder, more insistent.
 
-I lowered the stylus. My left hand trembled. Not with weakness. With *excess*. With the sheer, terrifying *volume* of unsaid, unwritable time pressing against the fragile membrane of the present. The burnt-almond taste flooded my mouth again. Sweet. Suffocating. Inevitable.
+"...decision..."
 
-Nesta rose. Silent. She walked past me, her bare feet making no sound on the stone, and descended the spiral. I followed, not with purpose, but with the dull, heavy certainty of gravity. Down to the ground floor. To the small, sunken chamber that served as kitchen, scriptorium, and sanctuary—the Hearth Room.
+"...choice..."
 
-It smelled of damp wool, dried mint, and something else. Something warm and complex. Tea.
+"...consequences..."
 
-She was already there. Kneeling before the low, stone hearth where a single, banked ember glowed orange in the ash. A small, black iron pot sat nestled in the coals. Steam rose from its spout. Not wispy. Not dissipating.
+Right. Consequences. That's usually how these things work. Make the wrong choice, and something bad happens. Make the right choice, and... well, who knows? Maybe you get to make another choice.
 
-It rose in a perfect, slender column. And within that column, the steam *held shape*.
+With a sigh, I reached out and took the torch. It was heavier than I expected, cool to the touch despite the warmth emanating from it. As my fingers closed around the handle, the symbols on the walls flared to life, casting the entire chamber in a brilliant blue light.
 
-Not a wisp. Not a cloud.
+The whispering stopped abruptly, replaced by a low hum that seemed to come from everywhere and nowhere at once. The air grew still, the silence pressing in on me with physical weight.
 
-A *vowel*.
+Then, without warning, the torch in my hand burst into flame. Not with a spark or a match, but with a sudden, brilliant flare of blue fire that illuminated the chamber in an otherworldly glow.
 
-*Ā.*
+The symbols on the walls began to shift and rearrange themselves, flowing like liquid stone into new patterns, new configurations. I watched, mesmerized, as they formed words, sentences, instructions.
 
-Long. Open. Unbroken. Hovering, trembling, impossibly stable in the cool air of the Hearth Room. It held for seven seconds. Eight. Nine. Longer than any steam I’d ever seen hold form. Longer than the Vowel Moors’ breath-fireflies lingered on still air. The ash-haze outside the single, grimy window was thickening, swirling sluggishly, but here, in this room, the steam *defied* the decay. It *resonated*.
+The first rule of this tower is simple: Survive.
+The second rule: Everything changes.
+The third rule: The tower watches.
+The fourth rule: Your choices matter.
+The fifth rule: Nothing is as it seems.
 
-Nesta poured the tea into two chipped ceramic cups. Not filled them. *Offered* them. She placed one on the low table before the hearth. The other she held, cradled in both hands, steam wreathing her face. Her eyes met mine. She didn’t gesture. Didn’t nod. Just held the cup, and the *ā*-shaped steam, and my gaze.
+The fire from the torch cast dancing shadows on the walls, making the symbols seem to move, to writhe, to watch me. I could feel the weight of the tower's gaze, the attention of countless unseen eyes.
 
-I sat. Took the cup. The ceramic was warm, rough-glazed. The tea was bitter, earthy, with a sharp, green aftertaste. I drank. The steam curled around my nose, carrying the scent of crushed mint and something deeper, older—wet stone and ozone.
+I'm not sure how long I stood there, reading the words, trying to understand their meaning. The torch burned with an unnatural light, its heat barely registering against the cold seeping into my bones.
 
-She watched me drink. Her reed braid hummed, a low, contented *ā* that vibrated in sympathy with the steam. When I set the cup down, she dipped her fingers in the ash beside the hearth—fine, grey, from the upper vaults—and touched them to her temple. The hum deepened, steadied. *Calibrating to my intake. To my swallow. To the syllable break in my throat as I swallowed.*
+Finally, the symbols stopped shifting, settling into a final pattern. The fire in the torch dimmed, returning to a steady, flickering blue flame.
 
-I looked at my hands on the table. Right hand: shadow sharp, real, casting a clear outline on the worn wood. Left hand: no shadow. Just the pale skin, the faint blue tracery of veins, the slight tremor in the index finger.
+"...understanding..."
 
-I picked up a sliver of charcoal from the hearth’s edge. Not chalk. Not for writing. For tracing. I drew in the ash on the table.
+"...accepting..."
 
-Not letters.
+"...proceeding..."
 
-A shape.
+I nodded, though I wasn't sure who I was nodding to. The tower? Whatever entity controlled this place? Or just myself, trying to convince myself that I understood what was happening.
 
-The spiral of the stairwell. From above. A perfect, tightening coil. I drew it with my left hand. The ash yielded, smooth and cool. No resistance. No refusal. The shape was clear, precise, *present*.
+"Fine," I whispered, the sound echoing strangely in the silent chamber. "I understand. Now what?"
 
-Then I drew it again. With my right hand.
+The symbols on the walls didn't change this time. Instead, the pedestal beneath the torch began to sink into the floor, revealing a staircase leading downward. The air grew colder as I walked, and the glow from the walls dimmed—revealing shadowy figures moving just beyond the light.
 
-The charcoal snagged. Skipped. The lines were jagged, hesitant. The spiral wobbled. The ash refused the *memory* of the shape, the *intention* to replicate, the *past act* of drawing it. It only accepted the *immediate, physical pressure* of the charcoal on the ash. The left hand, unburdened by temporal weight, drew true.
+I took a deep breath, clutching the torch tighter. This was it. The first test passed. Or maybe just the beginning of the first test. Either way, there was no turning back now.
 
-I stopped. Looked at the two spirals. One clean, one broken.
+"Here goes nothing," I muttered, starting down the stairs.
 
-Nesta’s hum shifted. A fraction higher. Sharper. *Stress.*
-
-She rose. Walked to the far wall, where a narrow shelf held Rhys’s few remaining tools: a brass magnifier, a vial of silver-ink (useless now, the silver inert), a small, leather-bound book bound in what looked like cured ash-hawk hide. She didn’t take any of them. She ran her fingertips along the shelf’s edge. Dust puffed into the air. Fine, grey, ancient dust.
-
-And as it fell, it revealed something beneath.
-
-Not the shelf’s wood. The *wall*.
-
-The dust on the wall—thick, centuries-old ash—had been disturbed. Not wiped. *Vibrated.* And where it had trembled and resettled, the layer was thinner. Thin enough to see the stone beneath.
-
-Not plain granite.
-
-Glyphs.
-
-Faint, etched deep into the bedrock, older than Rhys, older than the Lexicon’s founding. Angular, precise, utterly alien. They weren’t Tal’vyr script. No flowing curves, no vowel-humming loops. These were sharp, geometric, built of intersecting lines and impossible angles. They looked like diagrams. Or equations. Or *instructions*.
-
-One glyph, directly opposite the spot where Nesta’s fingertip had vibrated the dust, was partially exposed. It resembled a spiral—tight, constricting—but with a single, stark line bisecting it, cutting it clean in half. *The spiral’s lip.*
-
-My breath hitched. A raw, uncontrolled sound.
-
-Nesta didn’t look at the glyphs. She looked at me. Her eyes held mine. Then, slowly, deliberately, she raised her right hand. Not to point. Not to gesture.
-
-She clicked her tongue.
-
-A single, sharp, precise *click*.
-
-Not loud. Not harsh.
-
-*Clear.*
-
-Identical to Elder Rhys’s final utterance. The sound that had echoed in the stairwell last night, the sound that had preceded the chalk’s warmth, the glyph’s pulse, the wall’s sigh. The sound that had hung in the air, unfinished, like a verb stripped of its ending.
-
-*Click.*
-
-The sound didn’t fade.
-
-It *vibrated*.
-
-The dust on the stairwell wall—dust I could see from where I sat, dust that had just revealed the ancient glyphs—*leapt*. Not a puff. A *jump*. A collective, microscopic recoil, as if struck by a tuning fork. And in that instant of suspended dust, the exposed glyphs *glowed*. Not with light. With *absence*. A deeper black, a colder void, etching themselves onto the retina.
-
-The burnt-almond taste flooded my mouth, thick and cloying.
-
-Nesta lowered her hand. Her reed braid hummed, lower now. Steadier. *Ā.* Anchoring. Holding the space where the click had been.
-
-I stared at my left hand. At the slate, still lying on the step upstairs, still bearing the ghostly, unwritten *yesterday*. At the charcoal spirals on the table—clean and broken. At the *ā*-shaped steam, still hovering, defying decay.
-
-The question wasn’t *what* happened when you spoke the day before the unraveling.
-
-The question was *who* was speaking it.
-
-And who was listening.
-
-I rose. My legs felt unsteady, not with weakness, but with the vertigo of standing on a fault line. I walked past Nesta, past the hearth, up the spiral stairs. My left foot landed on the first step. No shadow. My right foot landed on the second. Shadow sharp, real. Step by step, I ascended, a man walking between two worlds, his body split down the middle by time itself.
-
-I reached the seventh step. The slate was where I’d left it. The stylus lay beside it. Basalt. Cool. Settled.
-
-I picked up the stylus.
-
-My left hand trembled. Not with fear. With *recognition*. With the terrible, tender vigilance of watching a loved one fade, correcting their slurred words even as their mind slips. I was correcting *time* now. Trying to force the past into the present’s narrow, unforgiving frame.
-
-I didn’t trace in the air.
-
-I wrote.
-
-*YESTERDAY.*
-
-Chalk met slate. *Shush.*
-
-The ‘Y’ formed. Solid. White.
-
-The ‘E’ formed. Clear.
-
-The ‘S’—a confident stroke.
-
-Then the ‘T’.
-
-The chalk didn’t skip.
-
-It didn’t dissolve.
-
-It *snapped*.
-
-Not at the tip. Not at the base.
-
-At the *syllable break*.
-
-*Yes-ter-day.*
-
-The stylus shattered precisely between the ‘S’ and the ‘T’. A clean, sharp fracture. The front half—the ‘Y’, ‘E’, ‘S’—remained in my fingers, chalk dust puffing from the broken end. The back half—the ‘T’, ‘E’, ‘R’, ‘D’, ‘A’, ‘Y’—fell silently onto the slate, a constellation of useless fragments.
-
-Silence.
-
-Thick. Heavy. Charged.
-
-Then—
-
-*Click.*
-
-From below.
-
-Not from Nesta’s mouth.
-
-From the stairwell wall.
-
-The same sound. Precise. Clear. Identical.
-
-And as it echoed up the spiral, the dust on the wall *leapt* again. Higher this time. And the ancient glyphs beneath—those sharp, angular, bisected spirals—*flared*. Not with light. With a *pull*. A sudden, silent vacuum in the air, a distortion that made the edges of the stone blur.
-
-The burnt-almond taste was a physical weight on my tongue. I couldn’t swallow.
-
-I looked down the spiral.
-
-Nesta stood at the base. Not looking up. Looking *at the wall*. At the glyphs now pulsing with that cold, hungry void-light. Her reed braid was utterly still. No hum. No vibration. Just silence. Absolute. Profound.
-
-And for the first time since I’d found her, mute and wide-eyed, in the ruins of the Lower Archive, she made a sound.
-
-Not a click.
-
-A breath.
-
-A single, slow, controlled *inhale*.
-
-Through her nose.
-
-And as she breathed in, the dust on the wall didn’t just leap.
-
-It *flowed*.
-
-Not upward. Not outward.
-
-*Inward.*
-
-Towards the glyphs. Towards the fracture in the stone. Towards the silence where Rhys’s final word had died.
-
-The chalk fragments on the slate began to *glow*. Not warm. Not amber. A sickly, phosphorescent green. The colour of decay. The colour of ash-haze thickening over a dying vowel.
-
-I looked at the broken stylus in my hand. The ‘Y’, ‘E’, ‘S’. The beginning. The root. The part that *could* be spoken.
-
-The part that *had* been spoken.
-
-The part that *still* held weight.
-
-The part that *still* meant something.
-
-The burnt-almond taste was choking me now. Sweet. Suffocating. Inevitable.
-
-I raised the broken stylus.
-
-Not to write *yesterday*.
-
-To write *yes*.
-
-Just *yes*.
-
-The first syllable.
-
-The only part that remained whole.
-
-My left hand, shadowless, trembled over the slate.
-
-The green glow from the fragments pulsed, weak and desperate, like a failing heartbeat.
-
-Below, Nesta held her breath.
-
-The wall sighed.
-
-Ash tasted of burnt almonds again.
-
-And the chalk in my hand grew warm.
-
-Not hot.
-
-*Alive.*
+The darkness swallowed me whole.

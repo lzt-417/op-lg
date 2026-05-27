@@ -18,7 +18,7 @@ from src.state.planning_state import PlanningState
 # 阿里云百炼配置
 DASHSCOPE_API_KEY = "xxxxxx"
 DASHSCOPE_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-DASHSCOPE_MODEL = "qwen-long"
+DASHSCOPE_MODEL = "qwen3-8b"
 
 
 def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):

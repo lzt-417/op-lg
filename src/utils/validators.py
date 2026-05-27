@@ -107,6 +107,82 @@ def validate_style_fingerprint(content: str) -> Tuple[bool, str]:
     return True, ""
 
 
+def validate_chapter_outline(content: str, name: str = "chapter_outline") -> Tuple[bool, str]:
+    """验证 N6 章纲输出"""
+    ok, msg = validate_size(content, 200, name)
+    if not ok:
+        return ok, msg
+    ok, msg = validate_keyword(content, ["Scene", "场景", "scene"], name)
+    if not ok:
+        return ok, msg
+    ok, msg = validate_keyword(content, ["钩子", "hook", "悬念", "Hook"], name)
+    if not ok:
+        return ok, msg
+    return True, ""
+
+
+def validate_review_report(content: str, name: str = "review") -> Tuple[bool, str]:
+    """验证 N8 审查报告输出"""
+    ok, msg = validate_size(content, 200, name)
+    if not ok:
+        return ok, msg
+    if name == "logic_review":
+        ok, msg = validate_keyword(content, ["Chapter", "chapter", "章"], name)
+        if not ok:
+            return ok, msg
+    elif name == "prose_review":
+        ok, msg = validate_keyword(content, ["评分", "score", "Score", "维度", "dimension", "Dimension"], name)
+        if not ok:
+            return ok, msg
+    elif name == "adversarial_review":
+        ok, msg = validate_keyword(content, ["fat", "可删", "cuttable", "Cuttable", "字数"], name)
+        if not ok:
+            return ok, msg
+    return True, ""
+
+
+def validate_editor_review(content: str) -> Tuple[bool, str]:
+    """验证 N9 综合编辑报告"""
+    ok, msg = validate_size(content, 200, "editor_review")
+    if not ok:
+        return ok, msg
+    ok, msg = validate_keyword(content, ["P0", "P1", "P2"], "editor_review")
+    if not ok:
+        return ok, msg
+    return True, ""
+
+
+def retry_on_validation_failure(generate_func, validate_func, max_retries: int = 2,
+                                fix_prompt_template: str = None, **kwargs):
+    """
+    验证失败时重新派发：生成 → 验证 → 失败则带错误信息重新生成
+
+    Args:
+        generate_func: 生成函数
+        validate_func: 验证函数 (content) -> (ok, msg)
+        max_retries: 最大重试次数
+        fix_prompt_template: 修复提示模板，{error} 会被替换为错误信息
+        **kwargs: 传递给 generate_func 的参数
+    """
+    last_error = None
+    for attempt in range(max_retries + 1):
+        try:
+            result = generate_func(**kwargs)
+            ok, msg = validate_func(result)
+            if ok:
+                return result
+            last_error = msg
+            if attempt < max_retries:
+                print(f"  [RETRY] 验证失败，重新派发... ({msg})")
+                if fix_prompt_template and "user_prompt" in kwargs:
+                    kwargs["user_prompt"] = kwargs["user_prompt"] + f"\n\n上次问题：{msg}。请修复。"
+        except Exception as e:
+            last_error = str(e)
+            if attempt < max_retries:
+                print(f"  [RETRY] 第 {attempt + 1} 次失败，重试中... ({e})")
+    raise ValueError(f"验证失败，已重试 {max_retries} 次: {last_error}")
+
+
 def retry_on_failure(func, max_retries: int = 2, *args, **kwargs):
     """
     重试包装器：失败时重试最多 max_retries 次

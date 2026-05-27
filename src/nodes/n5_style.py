@@ -5,7 +5,7 @@ from ..state.planning_state import PlanningState
 from ..adapters.source_adapter import SourceDataAdapter
 from ..adapters.template_adapter import TemplateAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_style_fingerprint, validate_size, retry_on_failure
+from ..utils.validators import validate_style_fingerprint, validate_size, retry_on_validation_failure
 
 
 class N5StyleNode:
@@ -40,18 +40,13 @@ class N5StyleNode:
             style_template = self.template_adapter.get_style_fingerprint_template()
 
             print("  - 生成风格指纹...")
-            style_fingerprint = retry_on_failure(
-                self._generate_style, 2,
+            style_fingerprint = retry_on_validation_failure(
+                self._generate_style, validate_style_fingerprint, 2,
                 reader_persona=state["reader_persona"],
                 diversity_pools=diversity_pools,
                 ai_blacklist=ai_blacklist,
                 style_template=style_template,
             )
-
-            # 验证输出
-            ok, msg = validate_style_fingerprint(style_fingerprint)
-            if not ok:
-                raise ValueError(f"输出验证失败：{msg}")
 
             state["style_fingerprint"] = style_fingerprint
             state["current_node"] = "n5"
@@ -64,13 +59,11 @@ class N5StyleNode:
             print(f"N5 节点失败：{str(e)}")
             return state
 
-    def _generate_style(
-        self,
-        reader_persona: str,
-        diversity_pools: str,
-        ai_blacklist: str,
-        style_template: str,
-    ) -> str:
+    def _generate_style(self, **kwargs) -> str:
+        reader_persona = kwargs["reader_persona"]
+        diversity_pools = kwargs["diversity_pools"]
+        ai_blacklist = kwargs["ai_blacklist"]
+        style_template = kwargs["style_template"]
         system_prompt = f"""你是 Novelist Agent。为小说项目生成风格指纹（style_fingerprint.md）。
 
 ## 参考模板格式

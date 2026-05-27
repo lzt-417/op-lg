@@ -6,7 +6,7 @@ from typing import Dict, List
 from ..state.planning_state import PlanningState
 from ..adapters.template_adapter import TemplateAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_arc_outline, validate_keyword, retry_on_failure
+from ..utils.validators import validate_arc_outline, validate_keyword, retry_on_validation_failure
 
 
 class N4OutlineNode:
@@ -44,7 +44,10 @@ class N4OutlineNode:
             arc_outlines = {}
             for arc_info in arc_list:
                 print(f"  - 生成 {arc_info['name']}（{arc_info['chapters']}）...")
-                outline = self._generate_single_arc(
+                is_hook = arc_info["key"] == "hook_arc"
+                outline = retry_on_validation_failure(
+                    self._generate_single_arc,
+                    self._validate_arc_outline, 2,
                     arc_info=arc_info,
                     concept=state["concept"],
                     worldbuilding=state["world_setting"],
@@ -52,13 +55,8 @@ class N4OutlineNode:
                     story_graph=state["story_graph"],
                     arc_template=arc_template,
                     previous_outlines=arc_outlines,
+                    is_hook=is_hook,
                 )
-
-                # 验证输出
-                is_hook = arc_info["key"] == "hook_arc"
-                ok, msg = validate_arc_outline(outline, is_hook=is_hook)
-                if not ok:
-                    print(f"  [WARN] {arc_info['name']} 验证警告：{msg}")
 
                 arc_outlines[arc_info["key"]] = outline
 
@@ -147,16 +145,18 @@ class N4OutlineNode:
 
         return arcs
 
-    def _generate_single_arc(
-        self,
-        arc_info: Dict[str, str],
-        concept: str,
-        worldbuilding: str,
-        characters: str,
-        story_graph: str,
-        arc_template: str,
-        previous_outlines: Dict[str, str],
-    ) -> str:
+    def _validate_arc_outline(self, outline: str, **kwargs) -> tuple:
+        is_hook = kwargs.get("is_hook", False)
+        return validate_arc_outline(outline, is_hook=is_hook)
+
+    def _generate_single_arc(self, **kwargs) -> str:
+        arc_info = kwargs["arc_info"]
+        concept = kwargs["concept"]
+        worldbuilding = kwargs["worldbuilding"]
+        characters = kwargs["characters"]
+        story_graph = kwargs["story_graph"]
+        arc_template = kwargs["arc_template"]
+        previous_outlines = kwargs["previous_outlines"]
         is_hook = arc_info["key"] == "hook_arc"
 
         prev_summary = ""
@@ -212,34 +212,33 @@ class N4OutlineNode:
 
 请为 {arc_info['name']}（{arc_info['chapters']}）生成完整大纲。全部使用中文输出。"""
 
-        return retry_on_failure(
-            self.llm_client.invoke_with_system, 2,
+        return self.llm_client.invoke_with_system(
             system_prompt=system_prompt,
             user_prompt=user_prompt,
         )
 
     def _update_story_graph(self, story_graph: str, arc_outlines: Dict[str, str]) -> str:
-        """将 Arc 大纲中的伏笔计划回写到 story_graph"""
-        foreshadowing_section = "\n\n---\n\n## Foreshadowing Plan (from N4)\n\n"
+        """将 Arc 大纲中的伏笔计划和字数计划回写到 story_graph"""
+        section = "\n\n---\n\n## N4 回写：伏笔计划 + 字数计划\n\n"
+        keywords = ["伏笔", "foreshadow", "Foreshadowing", "字数", "word count", "Word Count",
+                     "短篇", "中篇", "长篇", "short", "medium", "long"]
         for key, content in arc_outlines.items():
-            # 提取伏笔相关内容
             lines = content.split("\n")
-            in_foreshadow = False
-            arc_foreshadow = []
+            in_section = False
+            arc_lines = []
             for line in lines:
-                if "伏笔" in line or "foreshadow" in line.lower() or "Foreshadowing" in line:
-                    in_foreshadow = True
-                    arc_foreshadow.append(line)
-                elif in_foreshadow:
+                if any(kw in line for kw in keywords):
+                    in_section = True
+                    arc_lines.append(line)
+                elif in_section:
                     if line.strip() == "" or line.startswith("#"):
-                        if arc_foreshadow:
+                        if arc_lines:
                             break
-                    arc_foreshadow.append(line)
-            if arc_foreshadow:
-                foreshadowing_section += f"### {key}\n"
-                foreshadowing_section += "\n".join(arc_foreshadow) + "\n\n"
+                    arc_lines.append(line)
+            if arc_lines:
+                section += f"### {key}\n"
+                section += "\n".join(arc_lines) + "\n\n"
 
-        # 只有提取到伏笔内容才追加
-        if len(foreshadowing_section) > 100:
-            return story_graph + foreshadowing_section
+        if len(section) > 100:
+            return story_graph + section
         return story_graph

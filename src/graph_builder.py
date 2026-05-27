@@ -11,6 +11,8 @@ from .nodes import (
     N5StyleNode,
     N6ChapterOutlineNode,
     N7ChapterWritingNode,
+    N8ReviewNode,
+    N9MergeFixNode,
 )
 from .adapters import TemplateAdapter, SourceDataAdapter
 from .utils.llm_client import LLMClient
@@ -264,5 +266,91 @@ def run_n1_n7(
     print(f"开始运行 N1-N7 流程（N7 最多写 {max_chapters} 章）...")
     final_state = graph.invoke(initial_state)
     print("N1-N7 流程完成")
+
+    return final_state
+
+
+def run_n1_n9(
+    llm_provider: str = "openai",
+    llm_model: str = None,
+    review_model: str = None,
+    xfq_root: str = "C:/Users/Administrator/Desktop/XFQ-Project",
+    base_url: str = None,
+    api_key: str = None,
+    max_chapters: int = 5,
+) -> PlanningState:
+    """
+    运行 N1-N9 全流程（写作 + 审改）
+
+    Args:
+        llm_model: N1-N7 使用的模型
+        review_model: N8-N9 使用的审查模型（默认同 llm_model）
+        max_chapters: 最多章数（默认 5，节省 token）
+    """
+    llm_client = LLMClient(
+        provider=llm_provider, model=llm_model,
+        base_url=base_url, api_key=api_key,
+    )
+    # 审查阶段可用更强模型
+    if review_model and review_model != llm_model:
+        review_client = LLMClient(
+            provider=llm_provider, model=review_model,
+            base_url=base_url, api_key=api_key,
+        )
+        print(f"  N1-N7 模型: {llm_model}，N8-N9 模型: {review_model}")
+    else:
+        review_client = llm_client
+
+    template_adapter = TemplateAdapter(xfq_root=xfq_root)
+    source_adapter = SourceDataAdapter(xfq_root=xfq_root)
+
+    n1 = N1ReaderPersonaNode(llm_client=llm_client, template_adapter=template_adapter, source_adapter=source_adapter)
+    n2 = N2ConceptNode(llm_client=llm_client, source_adapter=source_adapter)
+    n3 = N3SettingNode(llm_client=llm_client, source_adapter=source_adapter)
+    n4 = N4OutlineNode(llm_client=llm_client, template_adapter=template_adapter)
+    n5 = N5StyleNode(llm_client=llm_client, source_adapter=source_adapter, template_adapter=template_adapter)
+    n6 = N6ChapterOutlineNode(llm_client=llm_client, template_adapter=template_adapter, max_chapters=max_chapters)
+    n7 = N7ChapterWritingNode(llm_client=llm_client, max_chapters=max_chapters)
+    n8 = N8ReviewNode(llm_client=review_client, max_chapters=max_chapters)
+    n9 = N9MergeFixNode(llm_client=review_client, max_chapters=max_chapters)
+
+    workflow = StateGraph(PlanningState)
+    workflow.add_node("n1", n1)
+    workflow.add_node("n2", n2)
+    workflow.add_node("n3", n3)
+    workflow.add_node("n4", n4)
+    workflow.add_node("n5", n5)
+    workflow.add_node("n6", n6)
+    workflow.add_node("n7", n7)
+    workflow.add_node("n8", n8)
+    workflow.add_node("n9", n9)
+    workflow.add_edge("n1", "n2")
+    workflow.add_edge("n2", "n3")
+    workflow.add_edge("n3", "n4")
+    workflow.add_edge("n4", "n5")
+    workflow.add_edge("n5", "n6")
+    workflow.add_edge("n6", "n7")
+    workflow.add_edge("n7", "n8")
+    workflow.add_edge("n8", "n9")
+    # TODO: 源文件要求 N9→N6 循环（处理完一批 Arc 后回到 N6 处理下一批）
+    # 当前实现：线性流程，一次性处理所有 Arc（受 max_chapters 限制）
+    # 完整实现需要：N4 只生成大纲不写 story_graph，N6 逐 Arc 生成章纲，N9 后条件路由回 N6
+    workflow.add_edge("n9", END)
+    workflow.set_entry_point("n1")
+
+    graph = workflow.compile()
+
+    initial_state: PlanningState = {
+        "reader_persona": "", "concept": "", "world_setting": "",
+        "character_cards": "", "story_graph": "", "style_fingerprint": "",
+        "arc_outlines": {}, "chapter_outlines": {}, "chapter_drafts": {},
+        "logic_review": "", "adversarial_review": "", "prose_review": "",
+        "editor_review": "",
+        "current_node": "", "last_error": None,
+    }
+
+    print(f"开始运行 N1-N9 流程（最多 {max_chapters} 章）...")
+    final_state = graph.invoke(initial_state)
+    print("N1-N9 流程完成")
 
     return final_state

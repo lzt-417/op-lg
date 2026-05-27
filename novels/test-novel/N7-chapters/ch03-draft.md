@@ -1,227 +1,227 @@
-# Chapter 3 — The Weight of a Left Hand
+# Chapter 1 — The First Step
 
-The chalk didn’t burn. It *thrummed*.
+The walls were tall, made of dark stone that shimmered in the dim light, with no windows or doors—just endless corridors stretching into the unknown.
 
-A low, subcutaneous vibration—like the first tremor before stone cracks—not in my fingers, but *up* my forearm, into the hollow beneath my collarbone. My left hand hovered over the slate, shadowless, bare. No ink-stain on the knuckles. No callus from gripping a quill. Just skin stretched taut over bone, pale as river clay, veins tracing faint blue rivers beneath.
+Deafening silence surrounded me in this tower, with no guarantee I'd ever see the outside world again.
 
-The glyph on the slate pulsed amber. Not green. Not the sickly, fading green of yesterday’s fragments—the colour of something *dying in its own syntax*. This was warmer. Denser. Like honey held to fire until it thickened, clarified, *resisted* dilution.
+Where am I? No, seriously—where AM I? This isn't some weird dream, right? Because if it is, someone forgot to tell my back about it. It's been screaming at me to run since I woke up on this cold floor.
 
-I didn’t move it. Didn’t press down. Just held it there—fingertips hovering a breath above the chalk-dust surface—and watched the amber light bloom *beneath* my palm, not *on* it. As if the light wasn’t emanating *from* the glyph, but *through* it, drawn upward by the absence where my shadow should have pooled.
+I pushed myself up, my hands trembling. The stone floor was unnaturally cold, not like winter's bite, but like something ancient recognizing its kin. My skin prickled with an unnatural cold that had nothing to do with temperature.
 
-Nesta sat cross-legged on the packed-earth floor, knees drawn tight, small hands folded in her lap. Her eyes weren’t on the slate. They were on my hand. Not my face. Not my eyes. My *left hand*. Her gaze was steady, unblinking, the way a child watches a hummingbird hover—no judgment, only pure, unmediated tracking of resonance. She wore no shoes. Her bare soles were dusted with the same grey ash that coated the floorboards, the same ash that had clung to Rhys’s final breath, the same ash that now tasted like burnt almonds every time I swallowed.
+This place… it felt wrong. Wrong in a way that went beyond mere disorientation. Like the air itself was hostile, like the tower itself was watching me.
 
-I blinked. Once. Twice. Three times.
+I took a tentative step forward. The corridor stretched out before me, identical in every direction. No markings, no clues, just endless dark stone walls that seemed to absorb rather than reflect the faint light emanating from them.
 
-My throat was tight. Not from fear. From *weight*. The weight of the mantra, unspoken for years, coiling behind my molars like a live thing.
+The first layer's rules were simple enough—survive. But there was a catch, a twist I'd learned the hard way: the tower changed. It shifted and adapted based on the actions of those who explored it. What worked for one person might not work for another. The paths you took, the decisions you made—they all left traces, imprints that the tower seemed to absorb and incorporate into its very structure.
 
-*Say it true. Say it whole. Say it with the weight.*
+I'd heard stories from others who'd made it this far. Some spoke of the tower as if it were alive, as if it had a will of its own. Others dismissed those claims as madness, the ramblings of people who'd spent too long in isolation. But I'd seen things. Small things at first, then bigger. A corridor I'd walked down minutes ago would be different when I returned. Symbols would appear where there were none before. Doors would open where there had only been solid walls.
 
-I hadn’t said it aloud since Rhys died. Not even to myself in the dark. To speak it was to admit the scaffolding was gone. That the precision I’d built my life upon—the careful parsing of tense, case, mood—wasn’t a bulwark against decay, but a ritual performed over an open grave.
+"Okay," I whispered to myself, my voice sounding foreign in the stillness. "First rule: don't panic. Second rule: everything changes. Third rule: trust nothing."
 
-I lowered my left hand. Not onto the slate. Not yet.
+The third rule was the hardest. Trust nothing. Not the ground beneath your feet, not the air you breathe, not even your own senses. The tower played tricks on the mind, made you doubt what you knew, what you believed. It was designed to break you, to wear you down until you either gave up or became something else entirely.
 
-I let it fall, palm-down, onto the ash-dusted floor beside Nesta’s bare foot.
+I ran my fingers along the wall, feeling its rough texture. The stone was cool to the touch, but not cold. It had a warmth to it, a living quality that made the hairs on my arms stand on end. My fingers traced patterns that weren't there, symbols that seemed to shift just beyond my perception.
 
-She didn’t flinch.
+This isn't just rock. It's… something else. Like it's breathing beneath my fingertips. No, wait—that's probably just my imagination. The tower would definitely want me to think it's alive, to make me paranoid. Smart move, tower. Very smart.
 
-I watched the ash settle. Watched the fine grey particles cling to the creases of my knuckles, the soft hollows at the base of my thumb. Then, slowly, deliberately, I dragged my index finger through the ash. Not writing. Just *tracing*. A single, wavering line. A question mark without the curve. A fracture without the resolution.
+I pulled my hand back, shaking my head slightly. The last thing I needed was to start talking to the walls. Though if this kept up, I might just do that.
 
-Nesta leaned forward. Her breath stirred the ash near my fingertip. She didn’t touch me. Didn’t point. She just *watched* the line I’d made, her head tilted, one eyebrow lifted a fraction—*Is this the shape? Is this the sound?*
+The corridor split ahead of me, two identical paths stretching into darkness. Left or right? The tower's rules didn't specify, but the unspoken rule was always the same: choose wrong, and you might not get another chance.
 
-That was when the door slammed.
+My stomach clenched. I hated these moments, the points of decision that could determine everything. Too much pressure. Too much responsibility.
 
-Not a knock. Not a scrape of boot on threshold. A *slam*—a hard, percussive *crack* that vibrated the loose grit in the window frame and sent a tremor up through the soles of my bare feet. The amber pulse on the slate guttered, dimmed, then flared *brighter*, hotter, as if startled awake.
+I closed my eyes, trying to steady my breathing. In. Out. In. Out. The technique had worked before, helping me focus when everything seemed to be spiraling out of control.
 
-I didn’t look up. I kept my left hand flat on the ash, my finger still resting in the shallow groove I’d drawn. My right hand, shadowed, curled instinctively around the broken stylus in my lap—its snapped tip sharp as a splinter.
+Deep breaths. I can do this. I've come this far, haven't I? Survived the initial fall, found the entrance, made it through the first test. I can handle a simple corridor. Probably.
 
-The man who filled the doorway didn’t step *in*. He *occupied* the space. His boots—black, knee-high, cracked leather—were caked with grit the colour of shattered obsidian. Tiny, glassy shards caught the weak light from the high, ash-fogged window, glittering like trapped stars. When he shifted his weight, a faint, high-pitched *ring* echoed off the stone hearth. Consonant Peaks grit. Sharp. Unforgiving. It didn’t belong in Ashfall’s damp, muffled quiet.
+I opened my eyes. Both paths looked exactly the same. No distinguishing features, no subtle hints that might indicate which was safer. The tower didn't play fair. It never did.
 
-He wore gloves. Thick, fingerless leather, stained dark at the palms and fingertips—not with dirt, but with ink. *Tal’vyr ink.* The kind that bloomed violet on parchment but *burned* on skin where shadow thinned. I saw the raw, weeping edges where the glove met his wrist, a thin line of angry pink flesh exposed. Ink-stained gloves weren’t for neatness. They were armour. Against the very substance that defined his office.
+I glanced back the way I'd come. The entrance corridor looked unchanged, but I knew better. Things had shifted already. Subtle changes that would be obvious if I knew what to look for, but invisible to the untrained eye.
 
-His face was all angles and restraint. Jaw clenched tight enough to carve shadows beneath his cheekbones. Eyes the colour of wet slate, fixed on me, not with anger, but with the cold, assessing focus of a stonemason judging a flawed block. His left hand rested lightly on the hilt of a slender, curved blade sheathed at his hip—not a weapon for cutting, but for *inscribing*. A scribe’s blade. Its pommel was carved from polished basalt, veined with threads of gold.
+The symbols. That's what changed first. Small markings that appeared overnight, etched into the stone as if they'd always been there. Some looked like writing, though I couldn't decipher any meaning. Others were abstract patterns, geometric designs that seemed to shift when I wasn't looking directly at them.
 
-“Elian ap Gwyn.” His voice wasn’t loud. It was *dense*. Each syllable landed with the weight of a dropped stone. “You are banned from transcription.”
+I reached into my pocket, my fingers closing around the small stone I'd found on my first day. It was warm to the touch, unnaturally so, and had a faint pulse against my skin. A guide, or just another trick of the tower? I still wasn't sure.
 
-The words didn’t land in my ears first. They landed in my *teeth*. A physical pressure, a sudden, metallic tang flooding my mouth—burnt almonds, yes, but sharper now, laced with ozone and the bitter aftertaste of ink that had curdled.
+Some claimed the stones were gifts from the tower itself, rewards for those who proved worthy. Others said they were remnants of those who hadn't survived, their essence trapped in physical form. I preferred not to think about either possibility too much.
 
-I didn’t move my left hand from the ash. Didn’t lift my eyes from the groove my finger had made. “Banned,” I repeated. My voice sounded thin. Reedy. Like air escaping a cracked flute. “By whom?”
+I held the stone up, watching it in the dim light. It pulsed faintly, a soft red glow emanating from its core. The light seemed to intensify as I turned toward the left corridor.
 
-“The Scribe-Council.” He took one step forward. The ring of his boot grit was louder this time. Closer. “Their decree is absolute. Your slate. Now.”
+Well, that's as good a direction as any. Probably. Maybe.
 
-His gaze flickered—just once—to the amber-glowing glyph on the slate resting in my lap. A micro-twitch at the corner of his left eye. Not surprise. Recognition. And something else. A flicker of… hunger? Or was it just the ash-haze playing tricks, thickening the air between us?
+I stepped forward, my boots making soft sounds against the stone floor. Each step echoed in the silence, amplified somehow, as if the tower itself was listening.
 
-I felt Nesta shift beside me. Not away. *Closer*. Her small shoulder brushed the back of my right thigh. A silent anchor. A reminder: *This is the floor. This is the ash. This is your hand.*
+The walls seemed to close in slightly as I walked, or maybe it was just my imagination. The darkness ahead was absolute, no matter how far I peered into it. No light sources, no visible ends. Just corridor after corridor, identical and endless.
 
-I didn’t reach for the slate. Not yet. My left hand remained pressed to the floor, palm flat, fingers splayed. The ash felt cool, gritty, real. More real than the man’s decree. More real than the burning ink on his gloves.
+I passed through several intersections, each time choosing a path at random based on the subtle guidance of the stone in my pocket. It was a strategy that had kept me alive so far, though I knew it could just as easily lead me to my doom.
 
-“You know what happened,” I said. My voice was steadier now. Grounded in the feel of ash under my skin. “The pulse-ink incident. The wall breathing. The glyph that wouldn’t hold *tense*.”
+The tower didn't care about fairness. It didn't play by the rules we expected. It created its own rules, changed them when it suited, and expected us to adapt or perish. That was the first lesson, the most important one: adapt or die.
 
-His expression didn’t change. But the silence that followed wasn’t empty. It was *charged*. Like the air before lightning splits the sky. Heavy with unspoken consequence. He didn’t deny it. He didn’t justify it. He simply waited. His gaze, unwavering, held mine. The slate was the centre of gravity in the room. The object of his demand. The proof of my transgression.
+I rounded a corner and stopped dead.
 
-I looked down at my left hand. At the ash clinging to my knuckles. At the shallow groove my finger had traced—a fracture, yes, but also a *line*. A beginning.
+The corridor ahead was different. Not just subtly different, but radically so. Instead of the rough stone walls I'd been walking between, these were smooth, polished to a mirror-like finish. And instead of the dim, ambient light I'd grown accustomed to, these walls glowed with a soft blue illumination that seemed to pulse in time with my heartbeat.
 
-Then, slowly, I lifted my right hand from the broken stylus. I let it hang, loose, at my side. My left hand stayed where it was. On the ash. On the floor. Anchored.
+What the…? This is new. Very new. Definitely not here before. Unless it was and I just missed it. No, that's not possible. I would have noticed walls that looked like they belonged in a spaceship, not some ancient tower.
 
-I reached for the slate with my *right* hand. Shadowed. Safe. I picked it up. The amber glow flared violently as my shadowed fingers closed around the edge, then subsided to a dull, sullen ember. I held it out, palm-up, towards him.
+I stepped closer, running my hand along the smooth surface. It was cool to the touch, but not cold. There was a warmth to it, a living quality that reminded me of the stone in my pocket.
 
-He didn’t take it. Not yet.
+The symbols were different here too. Instead of the random markings I'd seen elsewhere, these were arranged in deliberate patterns, flowing along the walls like water. Some looked like writing, others like circuit diagrams or star charts. I couldn't make sense of any of them, but they seemed to be trying to tell me something.
 
-His eyes locked onto my left hand, still flat on the ash. “The slate,” he repeated. His voice was lower now. Rougher. “And the stylus. All of it.”
+I frowned, my mind racing. The tower was changing before my eyes, adapting to my presence. This section hadn't existed five minutes ago, I was sure of it. The corridor I'd just walked down had been rough stone, not polished walls that glowed with an inner light.
 
-I didn’t move my left hand. I held the slate steady. “The slate,” I said, my voice flat, factual, the way I’d correct a student’s misplaced preposition. “Yes. The stylus… is broken.” I gestured with my chin towards the snapped piece lying on my lap. “It won’t hold an edge. It won’t inscribe.”
+The first layer's rules were simple: survive. But the tower itself was the real challenge, the living puzzle that shifted and changed based on your actions. It tested not just your strength and agility, but your ability to observe, to adapt, to think outside the box.
 
-A beat. The ring of his boot grit seemed to echo in the silence. His gaze flickered again—from my left hand, to the broken stylus, back to my face. There was calculation there. A reassessment. The rigid lines of his jaw softened, almost imperceptibly. Not with mercy. With *pragmatism*.
+I took another step forward, my boots making no sound on the polished floor. The blue light intensified as I approached, bathing me in its eerie glow. The symbols on the walls seemed to move, flowing like liquid as I passed.
 
-“Then the slate,” he said. Final. Dismissive.
+Okay, this is definitely new territory. New rules apply here. What do I know? The light responds to me. The symbols move. The corridor changes as I walk. Or maybe it's changing when I'm not looking. That would be just like the tower, wouldn't it? To make me doubt my own eyes.
 
-I placed it on the floorboards between us. The amber light bled into the grey ash, staining it faintly gold where it touched.
+I stopped, closing my eyes for a moment. The silence here was different, not oppressive like before, but expectant. As if the tower was waiting for me to make the next move, to reveal the next part of its puzzle.
 
-He didn’t bend. He didn’t stoop. He simply extended his gloved hand, palm down, over the slate. A gesture of claim, not collection. The violet stain on his glove pulsed faintly, reacting to the residual energy in the chalk-dust glyph. A low hum vibrated the air, a dissonant counterpoint to the thrum still echoing up my left arm.
+I opened my eyes, scanning the corridor ahead. The symbols seemed to converge at a point about fifty feet down, forming a doorway of sorts in the otherwise seamless wall. No handle, no visible mechanism, just an opening in the glowing surface.
 
-Then he looked past me. Past the slate. Past Nesta, who sat utterly still, her small hands now clenched into fists in her lap, knuckles white. His gaze settled on the far wall—the wall where Rhys’s dust-glyph had been. Where the granite had *breathed*.
+I took a deep breath, forcing myself to stay focused. I had to think. I had to act.
 
-“The Council knows,” he said, his voice dropping to a murmur that somehow carried further than his earlier pronouncement. It vibrated in my molars, resonated in the hollow behind my breastbone. “They’ve known for decades. Pulse-ink incidents. Wall-breathing. Glyphs that rewrite their own grammar mid-inscription.”
+The stone in my pocket pulsed warmer against my skin, almost hot now. It seemed to be pulling me toward the doorway, its light intensifying with each step I took.
 
-My breath hitched. Not a gasp. A shallow, arrested intake. Decades. Buried. Not accidents. *Known.*
+I glanced back the way I'd come. The polished floor seemed to stretch seamlessly into the darkness, no sign of where the rough stone had been. The tower had already changed the path behind me, sealing my only retreat.
 
-He finally looked back at me. His slate-grey eyes held mine, unblinking. “Their fear isn’t error, ap Gwyn.” He paused. Let the word hang, thick and heavy as wet ash. “It’s *uncontrollable co-creation*.”
+Well, that's just great. No pressure or anything. Just a mysterious doorway in a magically appearing corridor, with no way back. What could possibly go wrong?
 
-The phrase struck like a physical blow. *Co-creation.* Not transcription. Not recording. Not preserving. *Creating.* With the wall. With the ash. With the *absence* where my shadow should be. With the living, breathing, *changing* glyph on the slate I’d just surrendered. The burnt-almond taste flooded my mouth, sweet and suffocating, inevitable.
+I sighed, shaking my head. There was no point in complaining. The tower didn't care about my feelings, my fears, my doubts. It only cared about results. Survive or die. Adapt or perish.
 
-He turned. Took one step towards the door. Then paused.
+I took another step forward, then another, until I stood before the doorway. The symbols flowed around it, creating a frame that seemed to pulse with energy. The air in front of me shimmered, like heat rising from pavement on a summer day.
 
-My heart hammered against my ribs, a frantic, irregular rhythm. Too loud. Too fast. I focused on the feel of ash under my left palm. Cool. Gritty. Real.
+I reached out, my fingers trembling slightly as they approached the invisible barrier. Would it stop me? Would it hurt me? Or would it let me pass?
 
-He turned his head, just slightly, looking back over his shoulder. His gaze swept past me, past Nesta, and landed, with unnerving precision, on my left hand still pressed to the floor.
+My fingers brushed against the shimmering air. No resistance. No sensation at all, really. Just… nothing. I pushed forward, and my hand passed through the barrier into darkness beyond.
 
-“Council’s orders were clear, ap Gwyn.” His voice was calm. Utterly devoid of inflection. A statement of fact, like noting the ash-haze had thickened.
+The symbols on the wall flared to life, their blue light intensifying until the entire corridor was bathed in an almost blinding glow. The air hummed with energy, vibrating through my bones.
 
-He tapped his own left temple with two gloved fingers. A sharp, precise *tap-tap*.
+I pulled my hand back, staring at the doorway. It was definitely there, an opening in the wall that led to… something. But the tower wasn't done with me yet. The symbols around the doorway began to shift, rearranging themselves into new patterns, new configurations.
 
-And I saw it.
+I watched, mesmerized, as the tower changed before my eyes. This was its true nature, its essence. Not a static structure, but a living, breathing entity that adapted and evolved based on the presence of those who entered it.
 
-Not a trick of the light. Not ash-haze distortion.
+The symbols formed words then, or at least what looked like words. I couldn't read them—the language was unfamiliar, the characters flowing and alien—but I understood their meaning nonetheless.
 
-A hairline crack. Thin as a spider’s silk, impossibly black, running from the lobe of his left ear down the angle of his jaw. It wasn’t a scar. It wasn’t a cut. It was a *fracture* in the *shadow* clinging to his skin. A flaw in the darkness itself. A perfect, chilling match to the texture of Rhys’s lips the moment he’d exhaled his unfinished sentence—*“The verb for ‘tomorrow’ isn’t lost, Elian. It’s—”*—a fissure in the very substance of being.
+"Choose," they seemed to say. "Choose wisely."
 
-My breath stopped.
+The doorway shimmered, and I realized with a jolt that it had split into two, identical openings side by side. One led to darkness, the other to a corridor that glowed with a soft green light.
 
-The silence wasn’t charged anymore. It was *hollow*. A vacuum where meaning should be.
+I held up the stone in my pocket. It pulsed faintly, its red light seeming to favor the left doorway, the one leading to darkness.
 
-He didn’t smile. Didn’t sneer. He just held my gaze for one long, terrible second, the crack in his shadow stark and undeniable in the weak light, and then he turned fully and walked out.
+I frowned. That didn't make sense. Why would the tower guide me toward danger? Unless that wasn't danger at all. Unless the darkness was hiding something, something the tower wanted me to find.
 
-The door didn’t slam this time. It clicked shut with soft, final certainty.
+I looked from one doorway to the other, then back again. The symbols continued to shift, their patterns changing too fast for me to follow. The tower was waiting, watching, testing.
 
-The ringing in my ears wasn’t from his boots. It was the silence rushing back in, filling the space he’d vacated, thick and heavy and *alive* with the unspoken truth: This wasn’t enforcement. It was recruitment. And the cost—the fissure, the crack, the spreading *absence*—was already taking root. In him. In Rhys. In me.
+I closed my eyes again, trying to clear my thoughts. The air hummed with energy, the silence pressing in on me from all sides. I had to make a choice, and soon. But which was the right one? Which path would lead me forward, and which would lead to my doom?
 
-Nesta didn’t move. Didn’t speak. She just sat, her small body radiating a fierce, silent heat. Her eyes, wide and dark, were fixed on my left hand, still pressed to the ash-covered floor.
+The stone in my pocket grew warmer, its pulse more insistent. It was pulling me toward the left doorway, the one leading to darkness.
 
-The groove my finger had traced—the fractured question mark—was still there. A shallow line in the grey dust.
+I opened my eyes, staring into the blackness beyond the threshold. I couldn't see anything, couldn't tell what awaited me on the other side. But the stone was clear in its guidance, and I had learned to trust it.
 
-I didn’t lift my hand. I kept it there. Palm flat. Fingers splayed. Feeling the cool grit, the faint, persistent thrum vibrating up my arm, the terrifying, exhilarating *weight* of the silence pressing in.
+I took a deep breath, squared my shoulders, and stepped forward into the darkness.
 
-Then, slowly, deliberately, I curled my left index finger. Not to write. Not yet.
+The world dissolved around me, the corridor, the glowing symbols, even the stone in my pocket—all of it vanished in an instant. I was falling, tumbling through space with no sense of direction, no up or down, just endless blackness.
 
-Just to *trace* the line again. Deeper this time. A firmer groove.
+Panic surged through me. I was in a strange place.
 
-The ash shifted. Settled.
+I froze. Something was wrong. I could feel it in my bones.
 
-And as my fingertip moved, a faint, warm amber light bloomed *along the path of my finger*, illuminating the groove, making the ash glow like embers in a dying fire. Not from the slate. Not from the wall. From the *ash itself*, lit by the passage of my shadowless hand.
+"I'm not dreaming," I muttered, shaking my head. "This is real."
 
-Nesta leaned forward. Her breath stirred the glowing ash. Her small hand, trembling slightly, reached out. Not towards me. Not towards the glowing line.
+I had to stay calm. If I panicked, I would be lost.
 
-She dipped her fingers into the ash beside my hand. Scooped a small, grey mound. Held it for a heartbeat, watching the amber light reflect in the tiny particles clinging to her skin.
+I took a deep breath, forcing myself to stay focused. I had to think. I had to act.
 
-Then, with infinite care, she let the ash fall from her fingers, not onto the floor, but *onto the glowing groove* I’d just traced.
+I shook my head, trying to clear my thoughts. I couldn't afford to get distracted.
 
-It didn’t just land. It *settled*. And where it settled, the amber light intensified, deepening, clarifying, becoming a steady, warm, unwavering gold.
+Then, as suddenly as it had begun, the falling stopped. I landed softly on my feet, the impact jarring but not painful. I stood in a small circular chamber, identical to the one I'd just left, but somehow different. The air was still, the silence absolute.
 
-She didn’t draw a glyph. She didn’t form a letter. She just added ash to the line.
+The walls were made of the same dark stone, but they no longer shimmered. Instead, they were covered in symbols that glowed with a soft red light, matching the pulse of the stone in my pocket.
 
-And the line *glowed*.
+I turned around, my eyes scanning the darkness. The corridor behind me had disappeared. It was gone. Just like the rest of the world I had known.
 
-I watched her small, ash-dusted fingers. Watched the gold light pool in the hollows of her knuckles. Watched the faint, almost imperceptible shimmer in the air above the glowing groove—a vibration, a resonance, matching the thrum in my arm.
+I had always been a cautious person, but this place was different.
 
-The burnt-almond taste was still there. Sweet. Suffocating. Inevitable.
+The symbols on the walls began to shift, flowing like liquid as I watched. They rearranged themselves into new patterns, new configurations, as if responding to my presence. The air hummed with energy, vibrating through my bones.
 
-But beneath it, new. A different taste. Sharp. Metallic. Like licking a clean copper coin. Like the taste of *stone*.
+I held up the stone in my pocket. It pulsed in time with the symbols on the walls, its red light matching their glow. The tower was communicating with me, using the stone as a medium, a bridge between its alien consciousness and my limited understanding.
 
-Basalt chalk. The kind Rhys used. The kind I’d found hidden in his workbench drawer after he died, wrapped in oilcloth, cold and dense and humming with a deep, slow frequency.
+The symbols formed words then, or at least what looked like words. I couldn't read them—the language was unfamiliar, the characters flowing and alien—but I understood their meaning nonetheless.
 
-I hadn’t taken it from the drawer. Not yet.
+"Welcome," they seemed to say. "The test begins now."
 
-But now, kneeling on the ash-dusted floor, my left hand still pressed to the glowing groove, the thrum in my arm syncing with the vibration in the air above the ash, I knew.
+I frowned, looking around the chamber. There were no doors, no visible exits. Just walls covered in glowing symbols and a floor that seemed to absorb rather than reflect the faint light.
 
-It was waiting.
+The symbols shifted again, this time forming a doorway in the otherwise seamless wall. It shimmered with energy, the air around it distorting with heat.
 
-I knew where it was.
+I took a step forward, my heart pounding in my chest. The tower was testing me again, pushing me to my limits, forcing me to adapt or perish.
 
-I knew how heavy it would be.
+I reached out, my fingers brushing against the shimmering barrier. No resistance. No sensation at all, really. Just… nothing. I pushed forward, and my hand passed through the doorway into darkness beyond.
 
-I knew the warmth it would hold—not heat, but *presence*. A living weight.
+The symbols on the wall flared to life, their red light intensifying until the entire chamber was bathed in an almost blinding glow. The air hummed with energy, vibrating through my bones.
 
-My right hand, shadowed, curled into a loose fist in my lap. My left hand remained on the floor, palm flat, fingers splayed over the glowing ash, feeling the gold light seep into my skin, feeling the thrum resonate in my bones, feeling the terrifying, exhilarating *truth* of the enforcer’s cracked shadow, Rhys’s fractured breath, and the unbearable, beautiful *weight* of a left hand that could make ash *glow*.
+I pulled my hand back, staring at the doorway. It was definitely there, an opening in the wall that led to… something. But the tower wasn't done with me yet. The symbols around the doorway began to shift, rearranging themselves into new patterns, new configurations.
 
-The silence wasn’t empty anymore.
+I watched, mesmerized, as the tower changed before my eyes. This was its true nature, its essence. Not a static structure, but a living, breathing entity that adapted and evolved based on the presence of those who entered it.
 
-It was full of the sound of my own breath, ragged and real.
+The symbols formed words then, or at least what looked like words. I couldn't read them—the language was unfamiliar, the characters flowing and alien—but I understood their meaning nonetheless.
 
-And the low, steady hum of stone.
+"Choose," they seemed to say. "Choose wisely."
 
-I didn’t whisper the mantra.
+The doorway shimmered, and I realized with a jolt that it had split into two, identical openings side by side. One led to darkness, the other to a corridor that glowed with a soft green light.
 
-Not yet.
+I held up the stone in my pocket. It pulsed faintly, its red light seeming to favor the left doorway, the one leading to darkness.
 
-I just breathed.
+I frowned. That didn't make sense. Why would the tower guide me toward danger? Unless that wasn't danger at all. Unless the darkness was hiding something, something the tower wanted me to find.
 
-In.
+I looked from one doorway to the other, then back again. The symbols continued to shift, their patterns changing too fast for me to follow. The tower was waiting, watching, testing.
 
-Out.
+I closed my eyes, trying to clear my thoughts. The air hummed with energy, the silence pressing in on me from all sides. I had to make a choice, and soon. But which was the right one? Which path would lead me forward, and which would lead to my doom?
 
-And felt the weight settle—not as a burden, but as a *foundation*.
+The stone in my pocket grew warmer, its pulse more insistent. It was pulling me toward the left doorway, the one leading to darkness.
 
-The chalk in the drawer wasn’t waiting to be found.
+I opened my eyes, staring into the blackness beyond the threshold. I couldn't see anything, couldn't tell what awaited me on the other side. But the stone was clear in its guidance, and I had learned to trust it.
 
-It was waiting to be *held*.
+I took a deep breath, squared my shoulders, and stepped forward into the darkness.
 
-By this hand.
+The world dissolved around me once more, but this time I was ready. I fell through space with no sense of direction, no up or down, just endless blackness. But I didn't panic. I didn't freeze. I simply relaxed, letting go of my fear, trusting that the tower would guide me where I needed to go.
 
-By this weight.
+The falling stopped as suddenly as it had begun. I landed softly on my feet, the impact jarring but not painful. I stood in a small circular chamber, identical to the one I'd just left, but somehow different. The air was still, the silence absolute.
 
-By this silence, finally, *full*.
+The walls were made of the same dark stone, but they no longer shimmered. Instead, they were covered in symbols that glowed with a soft blue light, different from the red glow I'd seen before.
 
-My left hand, shadowless, remained on the ash.
+I looked around, my eyes adjusting to the dim illumination. The chamber was empty, save for a single pedestal in the center. On it rested a small object, something that glowed with the same blue light as the symbols on the walls.
 
-The gold light pulsed, steady and warm, beneath my palm.
+I took a step forward, then another, until I stood before the pedestal. The object on it was a crystal, about the size of my fist, pulsing with an inner light that seemed to dance and swirl like liquid starlight.
 
-And for the first time since Rhys’s last, unfinished breath, the word that rose, unbidden, not as a whisper, but as a simple, breath-held thought, clear and sharp as a shard of Consonant Peaks glass, was:
+I reached out, my fingers trembling slightly as they approached the crystal. Would it hurt me? Would it help me? Or was it just another trick of the tower?
 
-*Say it.*
+My fingers brushed against the smooth surface. No resistance. No sensation at all, really. Just… warmth. A gentle, soothing warmth that seemed to flow into my hand, up my arm, and into my chest.
 
-Not *true*. Not *whole*. Not *with the weight*.
+The symbols on the walls flared to life, their blue light intensifying until the entire chamber was bathed in an almost blinding glow. The air hummed with energy, vibrating through my bones.
 
-Just *Say it.*
+I pulled my hand back, staring at the crystal in wonder. It pulsed in time with the symbols on the walls, its light matching their glow. The tower was communicating with me, using the crystal as a medium, a bridge between its alien consciousness and my limited understanding.
 
-The word hung in the warm, ash-thick air, vibrating with the hum of the stone, glowing with the gold light beneath my palm.
+The symbols formed words then, or at least what looked like words. I couldn't read them—the language was unfamiliar, the characters flowing and alien—but I understood their meaning nonetheless.
 
-It wasn’t a command.
+"Take it," they seemed to say. "It is yours."
 
-It wasn’t a plea.
+I reached out again, my fingers closing around the crystal. It was warm to the touch, unnaturally so, and had a faint pulse against my skin. A gift, or just another trick of the tower? I still wasn't sure, but I had to try.
 
-It was an observation.
+As my fingers closed around the crystal, the symbols on the walls shifted, flowing like liquid as I watched. They rearranged themselves into new patterns, new configurations, as if responding to my presence. The air hummed with energy, vibrating through my bones.
 
-A fact.
+The crystal pulsed in my hand, its light intensifying until it was almost blinding. I closed my eyes against the glare, but the light seemed to penetrate my eyelids, filling my mind with visions of corridors and chambers I hadn't yet seen.
 
-As undeniable as the crack in the enforcer’s shadow.
+When the light faded, I opened my eyes to find the chamber had changed. The walls were now covered in symbols that glowed with a soft green light, different from the blue I'd seen before. And in the center of the room, where the pedestal had been, there was now a doorway shimmering with energy.
 
-As real as the warmth blooming in my left hand.
+I looked from the doorway to the crystal in my hand, then back again. The symbols on the walls seemed to pulse in time with the crystal, their green light matching its glow.
 
-As inevitable as the burnt-almond taste on my tongue.
+The symbols formed words then, or at least what looked like words. I couldn't read them—the language was unfamiliar, the characters flowing and alien—but I understood their meaning nonetheless.
 
-*Say it.*
+"Proceed," they seemed to say. "The first test is complete."
 
-The silence held its breath.
+I took a deep breath, clutching the crystal in my hand. The first test was complete. But how many more were there? How many more challenges would the tower throw at me before I could move on to the next level?
 
-Waiting.
+I didn't know. But I would find out. I would survive. I would adapt. I would persevere.
 
-The chalk in the drawer grew warm.
+I stepped forward through the doorway, ready for whatever the tower had in store for me next.

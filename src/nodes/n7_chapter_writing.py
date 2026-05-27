@@ -1,10 +1,14 @@
 """
 N7 节点：正文写作
 """
+import re
 from typing import Dict
 from ..state.planning_state import PlanningState
 from ..utils.llm_client import LLMClient
 from ..utils.validators import validate_size, retry_on_failure
+
+# POV 断裂检测：非第一人称叙事模式
+POV_BREAK_PATTERN = re.compile(r"^\s*[A-Z][a-z]+\s+(sat|stood|walked|looked|turned|smiled|nodded|sighed|whispered|shouted|laughed|cried|muttered|groaned)", re.MULTILINE)
 
 
 class N7ChapterWritingNode:
@@ -26,6 +30,8 @@ class N7ChapterWritingNode:
                 raise ValueError("N6 未完成，缺少 chapter_outlines")
             if not state.get("style_fingerprint"):
                 raise ValueError("N5 未完成，缺少 style_fingerprint")
+            if not state.get("character_cards"):
+                raise ValueError("N3 未完成，缺少 character_cards")
 
             chapters_to_write = list(state["chapter_outlines"].keys())[:self.max_chapters]
             print(f"  - 计划写作 {len(chapters_to_write)} 章（上限 {self.max_chapters}）")
@@ -40,7 +46,7 @@ class N7ChapterWritingNode:
 
                 print(f"  - 写作 {ch_key}...")
                 draft = retry_on_failure(
-                    self._write_chapter, 2,
+                    self._write_and_validate, 2,
                     ch_num=ch_num,
                     chapter_outline=ch_outline,
                     style_fingerprint=state["style_fingerprint"],
@@ -48,10 +54,6 @@ class N7ChapterWritingNode:
                     worldbuilding=state["world_setting"],
                     prev_chapters=prev_chapters,
                 )
-
-                ok, msg = validate_size(draft, 2200 * 3, f"ch{ch_num}")
-                if not ok:
-                    print(f"  [WARN] {ch_key} 字数可能不足：{msg}")
 
                 drafts[ch_key] = draft
 
@@ -65,6 +67,23 @@ class N7ChapterWritingNode:
             state["last_error"] = f"N7 节点失败：{str(e)}"
             print(f"N7 节点失败：{str(e)}")
             return state
+
+    def _write_and_validate(self, **kwargs) -> str:
+        """写作 + 验证（验证失败时抛异常触发重试）"""
+        draft = self._write_chapter(**kwargs)
+        ch_num = kwargs["ch_num"]
+
+        # 字数验证（英文 2200 words ≈ 12000 bytes）
+        ok, msg = validate_size(draft, 12000, f"ch{ch_num}")
+        if not ok:
+            raise ValueError(f"字数不足：{msg}")
+
+        # POV 断裂检测
+        pov_breaks = POV_BREAK_PATTERN.findall(draft)
+        if len(pov_breaks) > 3:
+            raise ValueError(f"POV 断裂：{len(pov_breaks)} 处非第一人称叙事")
+
+        return draft
 
     def _get_previous_chapters(self, drafts: Dict[str, str], ch_num: int) -> str:
         """获取前 2 章内容用于连续性"""
@@ -86,32 +105,34 @@ class N7ChapterWritingNode:
         prev_chapters: str,
     ) -> str:
         """写作单章正文"""
-        system_prompt = f"""你是 Scribe Agent。写出第 {ch_num} 章的完整正文。
+        system_prompt = f"""You are the Scribe Agent. Write the full text of Chapter {ch_num}.
 
-## 写作规则（来自风格指纹）
+## Writing Rules (from Style Fingerprint)
 {style_fingerprint[:2000]}
 
-## 规则
-- 严格遵循章纲
-- 每章不少于 2200 字
-- 标题格式：# 第 {ch_num} 章 — [标题]
-- 不要有元评论或作者注释
-- POV：与风格指纹一致
-- 不要描述其他角色的内心想法（只写 POV 角色）
-- 章尾钩子是必须的
-- 全部使用中文输出（专有名词可保留英文）"""
+## Rules
+- Follow the chapter outline strictly
+- Minimum 2200 words per chapter
+- Title format: # Chapter {ch_num} — [Title]
+- Signature Lines must be woven into the prose (not as comments)
+- No metadata comments or notes sections
+- No meta-commentary or author notes
+- POV: consistent with style fingerprint
+- Do not describe other characters' inner thoughts (only POV character)
+- Chapter-ending hook is mandatory
+- Write entirely in English (proper nouns from the worldbuilding may retain their original form)"""
 
-        user_prompt = f"""章纲：
+        user_prompt = f"""Chapter Outline:
 {chapter_outline}
 
-角色设定：
+Character Cards:
 {characters[:1500]}
 
-世界观设定：
+Worldbuilding:
 {worldbuilding[:1500]}
-{"--- 前文衔接 ---" + chr(10) + prev_chapters if prev_chapters else ""}
+{"--- Previous Chapters (for continuity) ---" + chr(10) + prev_chapters if prev_chapters else ""}
 
-请写出第 {ch_num} 章的完整正文（不少于 2200 字）。全部使用中文输出。"""
+Write the full text of Chapter {ch_num} in English (minimum 2200 words)."""
 
         return self.llm_client.invoke_with_system(
             system_prompt=system_prompt,

@@ -7,6 +7,9 @@ from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 
+# 需要流式模式的模型
+STREAM_ONLY_MODELS = ["glm-4.5-air"]
+
 
 class LLMClient:
     """LLM 调用封装，支持 OpenAI 和 Anthropic（包括兼容接口）"""
@@ -27,6 +30,9 @@ class LLMClient:
         # 默认模型
         if model is None:
             model = "gpt-4o" if provider == "openai" else "claude-sonnet-4-6-20250514"
+
+        self.model = model
+        self.use_stream = any(m in model.lower() for m in STREAM_ONLY_MODELS)
 
         # 获取 API Key
         if api_key is None:
@@ -67,7 +73,7 @@ class LLMClient:
         **kwargs
     ) -> str:
         """
-        调用 LLM
+        调用 LLM（自动选择流式或非流式）
 
         Args:
             messages: 消息列表（SystemMessage, HumanMessage 等）
@@ -76,8 +82,19 @@ class LLMClient:
         Returns:
             LLM 的响应文本
         """
+        if self.use_stream:
+            return self._invoke_stream(messages, **kwargs)
         response = self.llm.invoke(messages, **kwargs)
-        return response.content
+        return (response.content or "").replace("\x00", "")
+
+    def _invoke_stream(self, messages: List[BaseMessage], **kwargs) -> str:
+        """流式调用 LLM，收集所有 chunks 返回完整文本"""
+        full_content = ""
+        for chunk in self.llm.stream(messages, **kwargs):
+            if chunk.content:
+                full_content += chunk.content
+        # 过滤 null 字节（某些模型流式输出会带 \x00）
+        return full_content.replace("\x00", "")
 
     def invoke_with_system(
         self,

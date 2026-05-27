@@ -5,6 +5,8 @@ from .n4_outline import N4OutlineNode
 from .n5_style import N5StyleNode
 from .n6_chapter_outline import N6ChapterOutlineNode
 from .n7_chapter_writing import N7ChapterWritingNode
+from .n8_review import N8ReviewNode
+from .n9_merge_fix import N9MergeFixNode
 
 __all__ = [
     "N1ReaderPersonaNode",
@@ -14,4 +16,6 @@ __all__ = [
     "N5StyleNode",
     "N6ChapterOutlineNode",
     "N7ChapterWritingNode",
+    "N8ReviewNode",
+    "N9MergeFixNode",
 ]

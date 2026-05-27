@@ -5,7 +5,7 @@ from ..state.planning_state import PlanningState
 from ..adapters.template_adapter import TemplateAdapter
 from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_reader_persona, retry_on_failure
+from ..utils.validators import validate_reader_persona, retry_on_validation_failure
 
 
 class N1ReaderPersonaNode:
@@ -36,16 +36,11 @@ class N1ReaderPersonaNode:
 注意：全部使用中文输出（专有名词如书名、平台名可保留英文）。"""
 
             print("  - 调用 LLM 生成读者画像...")
-            reader_persona = retry_on_failure(
-                self.llm_client.invoke_with_system, 2,
+            reader_persona = retry_on_validation_failure(
+                self._generate, validate_reader_persona, 2,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
             )
-
-            # 验证输出
-            ok, msg = validate_reader_persona(reader_persona)
-            if not ok:
-                raise ValueError(f"输出验证失败：{msg}")
 
             state["reader_persona"] = reader_persona
             state["current_node"] = "n1"
@@ -57,3 +52,6 @@ class N1ReaderPersonaNode:
             state["last_error"] = f"N1 节点失败：{str(e)}"
             print(f"N1 节点失败：{str(e)}")
             return state
+
+    def _generate(self, **kwargs) -> str:
+        return self.llm_client.invoke_with_system(**kwargs)

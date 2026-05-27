@@ -27,7 +27,7 @@
 - N4 全书大纲 → outline-hook_arc.md + outline-arc_1~4.md
 - N5 风格指纹 → style_fingerprint.md
 
-### Day 3：写作（N6 + N7）✅ 已完成
+### Day 3：写作（N6 + N7）
 - N6 章纲生成 → ch01~03-outline.md
 - N7 正文写作 → ch01~03-draft.md（每章 ≥2200 字）
 - 输出验证 + 重试机制
