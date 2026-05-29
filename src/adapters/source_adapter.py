@@ -1,14 +1,20 @@
 """
 源数据适配器：读取 XFQ-Project 的源数据文件
 """
+import os
 from pathlib import Path
+
+
+def _default_xfq_root() -> str:
+    """从环境变量获取 XFQ-Project 路径，未设置时使用默认值"""
+    return os.getenv("XFQ_ROOT", "C:/Users/Administrator/Desktop/XFQ-Project")
 
 
 class SourceDataAdapter:
     """读取 XFQ-Project 的源数据"""
 
-    def __init__(self, xfq_root: str = "C:/Users/Administrator/Desktop/XFQ-Project"):
-        self.xfq_root = Path(xfq_root)
+    def __init__(self, xfq_root: str = None):
+        self.xfq_root = Path(xfq_root or _default_xfq_root())
         self.source_dir = self.xfq_root / "pipeline" / "source"
 
     def get_diversity_pools(self) -> str:

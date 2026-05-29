@@ -6,7 +6,7 @@ from ..adapters.source_adapter import SourceDataAdapter
 from ..utils.llm_client import LLMClient
 from ..utils.validators import (
     validate_worldbuilding, validate_characters, validate_story_graph,
-    validate_keyword, retry_on_validation_failure,
+    validate_keyword, retry_on_validation_failure, append_retry_error,
 )
 
 
@@ -105,6 +105,8 @@ class N3SettingNode:
 （characters.md 的完整内容）
 ===CHARACTERS_END==="""
 
+        system_prompt = append_retry_error(system_prompt, **kwargs)
+
         user_prompt = f"""概念设计：
 {concept}
 
@@ -128,8 +130,8 @@ class N3SettingNode:
                 worldbuilding = worldbuilding or parts[0].strip()
                 characters = characters or parts[1].strip()
             else:
-                worldbuilding = worldbuilding or result
-                characters = characters or result
+                # 无法分离，验证失败要求重新生成
+                return False, "输出格式错误：未找到 ===WORLDBUILDING_START=== 和 ===CHARACTERS_START=== 标记，无法分离世界观和角色设定。请使用指定格式输出。"
 
         ok, msg = validate_worldbuilding(worldbuilding)
         if not ok:
@@ -155,6 +157,8 @@ class N3SettingNode:
 - 追踪线编号用 F01, F02, F03... 格式
 - 每条追踪线要有明确的起止章节
 - 信息差部分要标注清楚时间节点"""
+
+        system_prompt = append_retry_error(system_prompt, **kwargs)
 
         user_prompt = f"""概念设计：
 {concept}

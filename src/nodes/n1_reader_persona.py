@@ -54,4 +54,6 @@ class N1ReaderPersonaNode:
             return state
 
     def _generate(self, **kwargs) -> str:
-        return self.llm_client.invoke_with_system(**kwargs)
+        system_prompt = kwargs.get("system_prompt", "")
+        user_prompt = kwargs.get("user_prompt", "")
+        return self.llm_client.invoke_with_system(system_prompt=system_prompt, user_prompt=user_prompt)

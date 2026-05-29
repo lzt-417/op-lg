@@ -19,7 +19,7 @@ class LLMClient:
         provider: str = "openai",
         model: Optional[str] = None,
         temperature: float = 0.7,
-        max_tokens: int = 4000,
+        max_tokens: int = 8000,
         base_url: Optional[str] = None,
         api_key: Optional[str] = None,
     ):

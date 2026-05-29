@@ -3,10 +3,10 @@ N8 节点：三路并行审查（逻辑 + 对抗 + 文笔）
 """
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Dict
 from ..state.planning_state import PlanningState
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_review_report, retry_on_failure
+from functools import partial
+from ..utils.validators import validate_review_report, retry_on_validation_failure, append_retry_error
 
 
 class N8ReviewNode:
@@ -23,8 +23,6 @@ class N8ReviewNode:
             return f.read()
 
     def __call__(self, state: PlanningState) -> PlanningState:
-        print("N8 节点：开始三路并行审查...")
-
         try:
             if not state.get("chapter_drafts"):
                 raise ValueError("N7 未完成，缺少 chapter_drafts")
@@ -37,12 +35,21 @@ class N8ReviewNode:
             if not state.get("story_graph"):
                 raise ValueError("N3 未完成，缺少 story_graph")
 
+            # 限定审查范围：当前 Arc 的章节
+            arc_chapters = state.get("current_arc_chapters") or list(state["chapter_drafts"].keys())
             chapter_drafts = state["chapter_drafts"]
             chapter_outlines = state.get("chapter_outlines", {})
             characters = state.get("character_cards", "")
             worldbuilding = state.get("world_setting", "")
             story_graph = state.get("story_graph", "")
             style_fingerprint = state.get("style_fingerprint", "")
+
+            # 确定 Arc 名称（用于报告标题）
+            arc_cursor = state.get("arc_cursor", 0)
+            arc_keys = sorted(state.get("arc_outlines", {}).keys())
+            arc_name = arc_keys[arc_cursor] if arc_cursor < len(arc_keys) else "unknown"
+
+            print(f"N8 节点：审查 {arc_name}（{', '.join(arc_chapters)}）...")
 
             # 读取审查指南
             logic_guide = self._read_guide("logic_review_guide.md")
@@ -51,51 +58,50 @@ class N8ReviewNode:
             ai_blacklist = self._read_guide("ai_patterns_blacklist.md") if os.path.exists(
                 os.path.join(self.guides_dir, "ai_patterns_blacklist.md")) else ""
 
-            # 合并所有章节内容
+            # 合并当前 Arc 的章节内容
             all_drafts = ""
             all_outlines = ""
-            for ch_key in sorted(chapter_drafts.keys()):
-                all_drafts += f"\n\n=== {ch_key} ===\n{chapter_drafts[ch_key]}"
+            for ch_key in arc_chapters:
+                if ch_key in chapter_drafts:
+                    all_drafts += f"\n\n=== {ch_key} ===\n{chapter_drafts[ch_key]}"
                 if ch_key in chapter_outlines:
                     all_outlines += f"\n\n=== {ch_key} ===\n{chapter_outlines[ch_key]}"
 
-            # 三路并行审查（源文件要求同时派发）
+            # 三路并行审查
             print("  - 并行派发 3 个 Reviewer...")
             results = {}
             with ThreadPoolExecutor(max_workers=3) as executor:
                 futures = {
-                    executor.submit(retry_on_failure, self._logic_review, 2,
+                    executor.submit(retry_on_validation_failure, self._logic_review,
+                                    partial(validate_review_report, name="logic_review"), 2,
                                     all_drafts=all_drafts, all_outlines=all_outlines,
                                     characters=characters, worldbuilding=worldbuilding,
                                     story_graph=story_graph, logic_guide=logic_guide): "logic_review",
-                    executor.submit(retry_on_failure, self._adversarial_review, 2,
+                    executor.submit(retry_on_validation_failure, self._adversarial_review,
+                                    partial(validate_review_report, name="adversarial_review"), 2,
                                     all_drafts=all_drafts, adversarial_guide=adversarial_guide): "adversarial_review",
-                    executor.submit(retry_on_failure, self._prose_review, 2,
+                    executor.submit(retry_on_validation_failure, self._prose_review,
+                                    partial(validate_review_report, name="prose_review"), 2,
                                     all_drafts=all_drafts, all_outlines=all_outlines,
                                     style_fingerprint=style_fingerprint, prose_guide=prose_guide,
                                     ai_blacklist=ai_blacklist): "prose_review",
                 }
                 for future in as_completed(futures):
                     name = futures[future]
-                    results[name] = future.result()
-                    print(f"  - {name} 完成")
+                    try:
+                        results[name] = future.result()
+                        print(f"  - {name} 完成")
+                    except Exception as e:
+                        raise ValueError(f"N8 审查 {name} 失败：{e}")
 
-            logic_review = results["logic_review"]
-            adversarial_review = results["adversarial_review"]
-            prose_review = results["prose_review"]
-
-            # 验证每份报告
-            for name, report in [("logic_review", logic_review), ("adversarial_review", adversarial_review), ("prose_review", prose_review)]:
-                ok, msg = validate_review_report(report, name)
-                if not ok:
-                    print(f"  [WARN] {name} 验证: {msg}")
-
-            state["logic_review"] = logic_review
-            state["adversarial_review"] = adversarial_review
-            state["prose_review"] = prose_review
+            # 追加审查报告（带 Arc 标题头，保留前几个 Arc 的报告）
+            arc_header = f"\n\n--- Arc: {arc_name} ---\n"
+            state["logic_review"] = (state.get("logic_review") or "") + arc_header + results["logic_review"]
+            state["adversarial_review"] = (state.get("adversarial_review") or "") + arc_header + results["adversarial_review"]
+            state["prose_review"] = (state.get("prose_review") or "") + arc_header + results["prose_review"]
             state["current_node"] = "n8"
 
-            print("N8 节点：三路审查完成")
+            print(f"N8 节点：{arc_name} 审查完成")
             return state
 
         except Exception as e:
@@ -105,7 +111,7 @@ class N8ReviewNode:
 
     def _logic_review(self, all_drafts: str, all_outlines: str,
                       characters: str, worldbuilding: str, story_graph: str,
-                      logic_guide: str) -> str:
+                      logic_guide: str, **kwargs) -> str:
         system_prompt = f"""You are a Reviewer Agent. Perform a logic review (Pass 1).
 
 ## Review Guide
@@ -116,6 +122,8 @@ class N8ReviewNode:
 - Even if no issues found, list all 7 items as "Pass"
 - Output in the exact table format specified in the guide
 - Be thorough and specific: cite chapter + paragraph for each issue"""
+
+        system_prompt = append_retry_error(system_prompt, **kwargs)
 
         user_prompt = f"""Chapter Drafts:
 {all_drafts[:6000]}
@@ -136,7 +144,7 @@ Perform the logic review. Output in English."""
 
         return self.llm_client.invoke_with_system(system_prompt=system_prompt, user_prompt=user_prompt)
 
-    def _adversarial_review(self, all_drafts: str, adversarial_guide: str) -> str:
+    def _adversarial_review(self, all_drafts: str, adversarial_guide: str, **kwargs) -> str:
         system_prompt = f"""You are a Reviewer Agent. Perform adversarial editing (Pass 2).
 
 ## Review Guide
@@ -155,6 +163,8 @@ Perform the logic review. Output in English."""
 - Protection rules: description paragraphs max 15% cut, dialogue paragraphs max 10% cut
 - CRITICAL: Your word count numbers must reflect the FULL text, not a summary or partial analysis"""
 
+        system_prompt = append_retry_error(system_prompt, **kwargs)
+
         user_prompt = f"""Chapter Drafts:
 {all_drafts[:8000]}
 
@@ -164,7 +174,7 @@ Perform the adversarial edit analysis. Output in English."""
 
     def _prose_review(self, all_drafts: str, all_outlines: str,
                       style_fingerprint: str, prose_guide: str,
-                      ai_blacklist: str) -> str:
+                      ai_blacklist: str, **kwargs) -> str:
         system_prompt = f"""You are a Reviewer Agent. Perform prose/style review (Pass 3).
 
 ## Review Guide
@@ -189,6 +199,8 @@ After scoring the 8 dimensions, you MUST perform a language purity scan:
 5. For EACH occurrence found, report: chapter, paragraph, the exact character/text, and suggested replacement
 6. If NONE found, explicitly state: 'Language purity: PASS — no non-English characters detected'
 7. This scan result MUST appear at the end of your report, as a separate section titled 'Dimension 9: Language Purity'"""
+
+        system_prompt = append_retry_error(system_prompt, **kwargs)
 
         user_prompt = f"""Chapter Drafts:
 {all_drafts[:6000]}

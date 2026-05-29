@@ -4,7 +4,6 @@ Day 4 主运行脚本：运行 N1-N9 流程（写作 + 审改）
 import os
 import sys
 
-# Windows GBK 编码修复
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
@@ -13,15 +12,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.graph_builder import run_n1_n9
 from src.state.planning_state import PlanningState
+from src.utils.config import DASHSCOPE_API_KEY, DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
 
-
-# 阿里云百炼配置
-DASHSCOPE_API_KEY = "xxxxxx"
-DASHSCOPE_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-DASHSCOPE_MODEL = "qwen3-8b"
-REVIEW_MODEL = "glm-4.5-air"  # N8-N9 审查用更强模型
-
-# 章数上限（节省 token）
+REVIEW_MODEL = "glm-4.5-air"
 MAX_CHAPTERS = 3
 
 
@@ -29,7 +22,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
     """保存输出到文件"""
     os.makedirs(output_dir, exist_ok=True)
 
-    # N1-N5 输出
     for key, filename in [
         ("reader_persona", "reader-persona.md"),
         ("concept", "concept.md"),
@@ -41,7 +33,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(state[key])
             print(f"  [OK] {filename} ({len(state[key])} chars)")
 
-    # N3 输出
     n3_dir = os.path.join(output_dir, "N3-setting")
     os.makedirs(n3_dir, exist_ok=True)
     for key, filename in [
@@ -55,7 +46,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(state[key])
             print(f"  [OK] N3-setting/{filename} ({len(state[key])} chars)")
 
-    # N4 输出
     if state.get("arc_outlines"):
         n4_dir = os.path.join(output_dir, "N4-outline")
         os.makedirs(n4_dir, exist_ok=True)
@@ -65,7 +55,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(content)
             print(f"  [OK] N4-outline/outline-{arc_name}.md ({len(content)} chars)")
 
-    # N6 输出
     if state.get("chapter_outlines"):
         n6_dir = os.path.join(output_dir, "N6-chapter-outlines")
         os.makedirs(n6_dir, exist_ok=True)
@@ -75,7 +64,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(content)
             print(f"  [OK] N6-chapter-outlines/{ch_key}-outline.md ({len(content)} chars)")
 
-    # N7/N9 输出（修复后的正文）
     if state.get("chapter_drafts"):
         n7_dir = os.path.join(output_dir, "N7-chapters")
         os.makedirs(n7_dir, exist_ok=True)
@@ -85,7 +73,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(content)
             print(f"  [OK] N7-chapters/{ch_key}-draft.md ({len(content)} chars)")
 
-    # N8 输出（审查报告）
     review_dir = os.path.join(output_dir, "N8-N10-review")
     os.makedirs(review_dir, exist_ok=True)
     for key, filename in [
@@ -99,7 +86,6 @@ def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
                 f.write(state[key])
             print(f"  [OK] N8-N10-review/{filename} ({len(state[key])} chars)")
 
-    # N9 输出（综合编辑报告）
     if state.get("editor_review"):
         filepath = os.path.join(review_dir, "editor-review.md")
         with open(filepath, "w", encoding="utf-8") as f:

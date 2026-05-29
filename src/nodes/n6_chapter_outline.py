@@ -1,16 +1,16 @@
 """
-N6 节点：章纲生成
+N6 节点：章纲生成（单 Arc 模式，支持 N9→N6 循环）
 """
 import re
 from typing import Dict, List
 from ..state.planning_state import PlanningState
 from ..adapters.template_adapter import TemplateAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_size, validate_chapter_outline, retry_on_validation_failure
+from ..utils.validators import validate_size, validate_chapter_outline, retry_on_validation_failure, append_retry_error
 
 
 class N6ChapterOutlineNode:
-    """N6 节点：为每个 Arc 生成逐章章纲"""
+    """N6 节点：为单个 Arc 生成逐章章纲（由 arc_cursor 控制处理哪个 Arc）"""
 
     def __init__(
         self,
@@ -23,66 +23,80 @@ class N6ChapterOutlineNode:
         self.max_chapters = max_chapters  # 0 = 不限制，>0 时按此值分批（每批 N 章）
 
     def __call__(self, state: PlanningState) -> PlanningState:
-        print("N6 节点：开始生成章纲...")
-
         try:
             if not state.get("arc_outlines"):
                 raise ValueError("N4 未完成，缺少 arc_outlines")
             if not state.get("style_fingerprint"):
                 raise ValueError("N5 未完成，缺少 style_fingerprint")
 
+            arc_keys = sorted(state["arc_outlines"].keys())
+            arc_cursor = state.get("arc_cursor", 0)
+
+            if arc_cursor >= len(arc_keys):
+                raise ValueError(f"arc_cursor ({arc_cursor}) 超出范围（共 {len(arc_keys)} 个 Arc）")
+
+            arc_key = arc_keys[arc_cursor]
+            arc_content = state["arc_outlines"][arc_key]
+
+            print(f"N6 节点：处理 Arc {arc_cursor + 1}/{len(arc_keys)} ({arc_key}) ...")
+
             chapter_template = self.template_adapter.get_chapter_outline_template()
 
-            all_outlines: Dict[str, str] = {}
+            chapter_range = self._extract_chapter_range(arc_content)
+            if not chapter_range:
+                raise ValueError(f"{arc_key} 未找到章节范围")
 
-            for arc_key, arc_content in state["arc_outlines"].items():
-                chapter_range = self._extract_chapter_range(arc_content)
-                if not chapter_range:
-                    print(f"  [WARN] {arc_key} 未找到章节范围，跳过")
-                    continue
+            start, end = chapter_range
+            total_in_arc = end - start + 1
 
-                start, end = chapter_range
-                total_in_arc = end - start + 1
+            if self.max_chapters > 0 and total_in_arc > self.max_chapters:
+                batches = []
+                batch_start = start
+                while batch_start <= end:
+                    batch_end = min(batch_start + self.max_chapters - 1, end)
+                    batches.append((batch_start, batch_end))
+                    batch_start = batch_end + 1
+                print(f"  - {arc_key} 共 {total_in_arc} 章，分 {len(batches)} 批生成（每批 {self.max_chapters} 章）")
+            else:
+                batches = [(start, end)]
+                print(f"  - 生成 {arc_key} 章纲（Ch{start}-Ch{end}，{total_in_arc} 章）...")
 
-                if self.max_chapters > 0 and total_in_arc > self.max_chapters:
-                    # 分批生成：每批 max_chapters 章
-                    batches = []
-                    batch_start = start
-                    while batch_start <= end:
-                        batch_end = min(batch_start + self.max_chapters - 1, end)
-                        batches.append((batch_start, batch_end))
-                        batch_start = batch_end + 1
-                    print(f"  - {arc_key} 共 {total_in_arc} 章，分 {len(batches)} 批生成（每批 {self.max_chapters} 章）")
-                else:
-                    batches = [(start, end)]
-                    print(f"  - 生成 {arc_key} 章纲（Ch{start}-Ch{end}，{total_in_arc} 章）...")
+            new_outlines: Dict[str, str] = {}
+            for batch_start, batch_end in batches:
+                ch_count = batch_end - batch_start + 1
+                if len(batches) > 1:
+                    print(f"    - 批次 Ch{batch_start}-Ch{batch_end}（{ch_count} 章）...")
 
-                for batch_start, batch_end in batches:
-                    ch_count = batch_end - batch_start + 1
-                    if len(batches) > 1:
-                        print(f"    - 批次 Ch{batch_start}-Ch{batch_end}（{ch_count} 章）...")
+                outline = retry_on_validation_failure(
+                    self._generate_arc_chapters,
+                    self._validate_arc_chapters,
+                    2,
+                    arc_key=arc_key,
+                    arc_content=arc_content,
+                    chapter_range=(batch_start, batch_end),
+                    worldbuilding=state["world_setting"],
+                    characters=state["character_cards"],
+                    story_graph=state["story_graph"],
+                    style_fingerprint=state["style_fingerprint"],
+                    chapter_template=chapter_template,
+                )
 
-                    outline = retry_on_validation_failure(
-                        self._generate_arc_chapters,
-                        self._validate_arc_chapters,
-                        2,
-                        arc_key=arc_key,
-                        arc_content=arc_content,
-                        chapter_range=(batch_start, batch_end),
-                        worldbuilding=state["world_setting"],
-                        characters=state["character_cards"],
-                        story_graph=state["story_graph"],
-                        style_fingerprint=state["style_fingerprint"],
-                        chapter_template=chapter_template,
-                    )
+                chapters = self._split_chapters(outline, batch_start)
+                new_outlines.update(chapters)
 
-                    chapters = self._split_chapters(outline, batch_start)
-                    all_outlines.update(chapters)
+            if not new_outlines:
+                raise ValueError(f"N6 节点：{arc_key} 未产出章纲")
 
-            state["chapter_outlines"] = all_outlines
+            # 追加到已有 chapter_outlines（保留前几个 Arc 的）
+            existing = state.get("chapter_outlines", {}) or {}
+            existing.update(new_outlines)
+            state["chapter_outlines"] = existing
+
+            # 记录当前 Arc 的章节 key 列表
+            state["current_arc_chapters"] = sorted(new_outlines.keys())
             state["current_node"] = "n6"
 
-            print(f"N6 节点：章纲生成完成（共 {len(all_outlines)} 章）")
+            print(f"N6 节点：{arc_key} 章纲完成（{len(new_outlines)} 章：{', '.join(sorted(new_outlines.keys()))}）")
             return state
 
         except Exception as e:
@@ -93,8 +107,8 @@ class N6ChapterOutlineNode:
     def _validate_arc_chapters(self, outline: str, **kwargs) -> tuple:
         """验证一批章纲的整体质量"""
         start, end = kwargs["chapter_range"]
-        # 整体大小验证：每章至少 300 bytes（源文件要求单章章纲 200-400 字）
-        ok, msg = validate_size(outline, 300 * (end - start + 1), f"Ch{start}-Ch{end}")
+        # 整体大小验证：源文件要求每批 >3000 bytes（约 600 bytes/章）
+        ok, msg = validate_size(outline, max(3000, 600 * (end - start + 1)), f"Ch{start}-Ch{end}")
         if not ok:
             return ok, msg
         # 检查是否包含足够数量的章纲标记
@@ -117,18 +131,16 @@ class N6ChapterOutlineNode:
             return int(match.group(1)), int(match.group(2))
         return None
 
-    def _generate_arc_chapters(
-        self,
-        arc_key: str,
-        arc_content: str,
-        chapter_range: tuple,
-        worldbuilding: str,
-        characters: str,
-        story_graph: str,
-        style_fingerprint: str,
-        chapter_template: str,
-    ) -> str:
+    def _generate_arc_chapters(self, **kwargs) -> str:
         """为单个 Arc 生成全部章纲"""
+        arc_key = kwargs["arc_key"]
+        arc_content = kwargs["arc_content"]
+        chapter_range = kwargs["chapter_range"]
+        worldbuilding = kwargs["worldbuilding"]
+        characters = kwargs["characters"]
+        story_graph = kwargs["story_graph"]
+        style_fingerprint = kwargs["style_fingerprint"]
+        chapter_template = kwargs["chapter_template"]
         start, end = chapter_range
 
         system_prompt = f"""你是 Novelist Agent。为第 {start} 章到第 {end} 章生成章纲。
@@ -146,6 +158,8 @@ class N6ChapterOutlineNode:
 - 输出格式：用 ===CHXX=== 和 ===END_CHXX=== 分隔每章
 - 全部使用中文输出"""
 
+        system_prompt = append_retry_error(system_prompt, **kwargs)
+
         user_prompt = f"""Arc 大纲（{arc_key}）：
 {arc_content}
 
@@ -159,7 +173,7 @@ class N6ChapterOutlineNode:
 {story_graph[:2000]}
 
 风格指纹（节选）：
-{style_fingerprint[:1500]}
+{style_fingerprint[:2000]}
 
 请为 Ch{start} 到 Ch{end} 生成章纲。全部使用中文输出。"""
 
@@ -181,12 +195,14 @@ class N6ChapterOutlineNode:
         else:
             # 降级：按 ## Chapter N 或 # Chapter N 拆分
             parts = re.split(r"(?=#+\s*(?:Chapter|Ch)\s*\d+)", text)
-            for i, part in enumerate(parts):
+            ch_idx = 0
+            for part in parts:
                 part = part.strip()
                 if not part:
                     continue
-                ch_num = start_num + i
+                ch_num = start_num + ch_idx
                 key = f"ch{ch_num:02d}"
                 chapters[key] = part
+                ch_idx += 1
 
         return chapters

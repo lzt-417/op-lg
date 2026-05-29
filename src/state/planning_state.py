@@ -1,5 +1,5 @@
 """
-状态定义（N1-N9 产出）
+状态定义（N1-N10 产出）
 """
 from typing import TypedDict, Dict, Optional, List
 
@@ -22,6 +22,7 @@ class PlanningState(TypedDict, total=False):
     - adversarial_review: 对抗编辑报告（N8 Pass 2）
     - prose_review: 文笔审查报告（N8 Pass 3）
     - editor_review: 综合编辑审查报告（N9）
+    - output_file: 最终输出文件路径（N10）
     - current_node: 当前所在节点
     - last_error: 最后一次错误信息
     """
@@ -38,6 +39,10 @@ class PlanningState(TypedDict, total=False):
     chapter_outlines: Dict[str, str]
     chapter_drafts: Dict[str, str]
 
+    # Arc 循环状态
+    arc_cursor: int
+    current_arc_chapters: List[str]
+
     # N8 产出
     logic_review: str
     adversarial_review: str
@@ -45,6 +50,9 @@ class PlanningState(TypedDict, total=False):
 
     # N9 产出
     editor_review: str
+
+    # N10 产出
+    output_file: str
 
     # 系统状态
     current_node: str

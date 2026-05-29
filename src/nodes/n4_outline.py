@@ -6,7 +6,7 @@ from typing import Dict, List
 from ..state.planning_state import PlanningState
 from ..adapters.template_adapter import TemplateAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_arc_outline, validate_keyword, retry_on_validation_failure
+from ..utils.validators import validate_arc_outline, validate_keyword, retry_on_validation_failure, append_retry_error
 
 
 class N4OutlineNode:
@@ -94,7 +94,7 @@ class N4OutlineNode:
         clean_concept = re.sub(r"\*\*", "", concept)
 
         # 匹配 Hook Arc（兼容有括号和无括号格式）
-        hook_pattern = r"Hook\s*Arc[^A-Z]*?(Ch[\d\-]+)"
+        hook_pattern = r"Hook\s*Arc[^\n]*?(Ch[\d\-]+)"
         hook_match = re.search(hook_pattern, clean_concept, re.IGNORECASE)
         if hook_match:
             hook_line = clean_concept[hook_match.start():].split("\n")[0]
@@ -107,7 +107,7 @@ class N4OutlineNode:
             })
 
         # 匹配 Arc N（兼容括号、表格、无括号等多种格式）
-        arc_pattern = r"Arc\s*(\d+)[^C]*?(Ch[\d\-]+)"
+        arc_pattern = r"Arc\s*(\d+)[^\n]*?(Ch[\d\-]+)"
         for match in re.finditer(arc_pattern, clean_concept, re.IGNORECASE):
             arc_num = match.group(1)
             chapters = match.group(2)
@@ -196,6 +196,8 @@ class N4OutlineNode:
 - 与 concept.md 的 Arc 规划一致
 - 与已有的世界观、角色、剧情关系图一致
 - 全部使用中文输出"""
+
+        system_prompt = append_retry_error(system_prompt, **kwargs)
 
         user_prompt = f"""概念设计：
 {concept}

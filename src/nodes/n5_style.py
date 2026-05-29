@@ -5,7 +5,7 @@ from ..state.planning_state import PlanningState
 from ..adapters.source_adapter import SourceDataAdapter
 from ..adapters.template_adapter import TemplateAdapter
 from ..utils.llm_client import LLMClient
-from ..utils.validators import validate_style_fingerprint, validate_size, retry_on_validation_failure
+from ..utils.validators import validate_style_fingerprint, validate_size, retry_on_validation_failure, append_retry_error
 
 
 class N5StyleNode:
@@ -92,6 +92,8 @@ class N5StyleNode:
 - 每条规则必须可执行（不是"对话要自然"，而是"用 said/asked 作标签，不要用 exclaimed/whispered"）
 - 参考读者画像调整耐心/偏好
 - 全部使用中文输出"""
+
+        system_prompt = append_retry_error(system_prompt, **kwargs)
 
         user_prompt = f"""读者画像：
 {reader_persona}

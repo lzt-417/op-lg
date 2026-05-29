@@ -38,7 +38,7 @@ def validate_pattern(content: str, pattern: str, min_count: int, name: str) -> T
     return True, ""
 
 
-def validate_reader_persona(content: str) -> Tuple[bool, str]:
+def validate_reader_persona(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N1 读者画像输出"""
     ok, msg = validate_size(content, 500, "reader_persona")
     if not ok:
@@ -49,7 +49,7 @@ def validate_reader_persona(content: str) -> Tuple[bool, str]:
     return True, ""
 
 
-def validate_concept(content: str) -> Tuple[bool, str]:
+def validate_concept(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N2 概念设计输出"""
     ok, msg = validate_size(content, 2000, "concept")
     if not ok:
@@ -60,17 +60,17 @@ def validate_concept(content: str) -> Tuple[bool, str]:
     return True, ""
 
 
-def validate_worldbuilding(content: str) -> Tuple[bool, str]:
+def validate_worldbuilding(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N3 世界观输出"""
     return validate_size(content, 2000, "worldbuilding")
 
 
-def validate_characters(content: str) -> Tuple[bool, str]:
+def validate_characters(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N3 角色设定输出"""
     return validate_size(content, 2000, "characters")
 
 
-def validate_story_graph(content: str) -> Tuple[bool, str]:
+def validate_story_graph(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N3 剧情关系图输出"""
     ok, msg = validate_pattern(content, r"F\d{2}", 1, "story_graph")
     if not ok:
@@ -78,7 +78,7 @@ def validate_story_graph(content: str) -> Tuple[bool, str]:
     return True, ""
 
 
-def validate_arc_outline(content: str, is_hook: bool = False) -> Tuple[bool, str]:
+def validate_arc_outline(content: str, is_hook: bool = False, **kwargs) -> Tuple[bool, str]:
     """验证 N4 Arc 大纲输出"""
     ok, msg = validate_keyword(content, ["Logline", "logline"], "arc_outline")
     if not ok:
@@ -90,7 +90,7 @@ def validate_arc_outline(content: str, is_hook: bool = False) -> Tuple[bool, str
     return True, ""
 
 
-def validate_style_fingerprint(content: str) -> Tuple[bool, str]:
+def validate_style_fingerprint(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N5 风格指纹输出"""
     ok, msg = validate_size(content, 2000, "style_fingerprint")
     if not ok:
@@ -121,7 +121,7 @@ def validate_chapter_outline(content: str, name: str = "chapter_outline") -> Tup
     return True, ""
 
 
-def validate_review_report(content: str, name: str = "review") -> Tuple[bool, str]:
+def validate_review_report(content: str, name: str = "review", **kwargs) -> Tuple[bool, str]:
     """验证 N8 审查报告输出"""
     ok, msg = validate_size(content, 200, name)
     if not ok:
@@ -141,7 +141,7 @@ def validate_review_report(content: str, name: str = "review") -> Tuple[bool, st
     return True, ""
 
 
-def validate_editor_review(content: str) -> Tuple[bool, str]:
+def validate_editor_review(content: str, **kwargs) -> Tuple[bool, str]:
     """验证 N9 综合编辑报告"""
     ok, msg = validate_size(content, 200, "editor_review")
     if not ok:
@@ -152,58 +152,39 @@ def validate_editor_review(content: str) -> Tuple[bool, str]:
     return True, ""
 
 
-def retry_on_validation_failure(generate_func, validate_func, max_retries: int = 2,
-                                fix_prompt_template: str = None, **kwargs):
+def retry_on_validation_failure(generate_func, validate_func, max_retries: int = 2, **kwargs):
     """
     验证失败时重新派发：生成 → 验证 → 失败则带错误信息重新生成
 
     Args:
         generate_func: 生成函数
-        validate_func: 验证函数 (content) -> (ok, msg)
+        validate_func: 验证函数 (content, **kwargs) -> (ok, msg)
         max_retries: 最大重试次数
-        fix_prompt_template: 修复提示模板，{error} 会被替换为错误信息
-        **kwargs: 传递给 generate_func 的参数
+        **kwargs: 传递给 generate_func 的参数（也会传给 validate_func）
     """
     last_error = None
     for attempt in range(max_retries + 1):
         try:
             result = generate_func(**kwargs)
-            ok, msg = validate_func(result)
+            ok, msg = validate_func(result, **kwargs)
             if ok:
                 return result
             last_error = msg
             if attempt < max_retries:
                 print(f"  [RETRY] 验证失败，重新派发... ({msg})")
-                if fix_prompt_template and "user_prompt" in kwargs:
-                    kwargs["user_prompt"] = kwargs["user_prompt"] + f"\n\n上次问题：{msg}。请修复。"
+                # 注入错误信息到 kwargs，generate 函数应检查 _last_error 并追加到 prompt
+                kwargs["_last_error"] = msg
         except Exception as e:
             last_error = str(e)
             if attempt < max_retries:
                 print(f"  [RETRY] 第 {attempt + 1} 次失败，重试中... ({e})")
+                kwargs["_last_error"] = str(e)
     raise ValueError(f"验证失败，已重试 {max_retries} 次: {last_error}")
 
 
-def retry_on_failure(func, max_retries: int = 2, *args, **kwargs):
-    """
-    重试包装器：失败时重试最多 max_retries 次
-
-    Args:
-        func: 要执行的函数
-        max_retries: 最大重试次数
-        *args, **kwargs: 传递给 func 的参数
-
-    Returns:
-        func 的返回值
-
-    Raises:
-        最后一次尝试的异常
-    """
-    last_error = None
-    for attempt in range(max_retries + 1):
-        try:
-            return func(*args, **kwargs)
-        except Exception as e:
-            last_error = e
-            if attempt < max_retries:
-                print(f"  [RETRY] 第 {attempt + 1} 次失败，重试中... ({e})")
-    raise last_error
+def append_retry_error(system_prompt: str, **kwargs) -> str:
+    """如果 kwargs 中有 _last_error，追加到 system_prompt 末尾"""
+    error = kwargs.get("_last_error")
+    if error:
+        return system_prompt + f"\n\n## ⚠️ 上次输出的问题\n{error}。请修复这个问题。"
+    return system_prompt
