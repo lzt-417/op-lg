@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.graph_builder import run_n1_n10
 from src.state.planning_state import PlanningState
-from src.utils.config import DASHSCOPE_API_KEY, DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
+from src.utils.config import DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
 
 REVIEW_MODEL = "glm-4.5-air"
 MAX_CHAPTERS = 3
@@ -58,7 +58,6 @@ def main():
             llm_model=DASHSCOPE_MODEL,
             review_model=REVIEW_MODEL,
             base_url=DASHSCOPE_BASE_URL,
-            api_key=DASHSCOPE_API_KEY,
             max_chapters=MAX_CHAPTERS,
             output_dir=OUTPUT_DIR,
         )

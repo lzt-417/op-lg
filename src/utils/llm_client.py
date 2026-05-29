@@ -34,9 +34,10 @@ class LLMClient:
         self.model = model
         self.use_stream = any(m in model.lower() for m in STREAM_ONLY_MODELS)
 
-        # 获取 API Key
+        # 获取 API Key（优先级：参数 > 环境变量 > config）
         if api_key is None:
-            api_key = os.environ.get(
+            from .config import DASHSCOPE_API_KEY
+            api_key = DASHSCOPE_API_KEY or os.environ.get(
                 "OPENAI_API_KEY" if provider == "openai" else "ANTHROPIC_API_KEY"
             )
 

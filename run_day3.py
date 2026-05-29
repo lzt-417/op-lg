@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.graph_builder import run_n1_n7
 from src.state.planning_state import PlanningState
-from src.utils.config import DASHSCOPE_API_KEY, DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
+from src.utils.config import DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
 
 MAX_CHAPTERS = 3
 
@@ -89,7 +89,6 @@ def main():
             llm_provider="openai",
             llm_model=DASHSCOPE_MODEL,
             base_url=DASHSCOPE_BASE_URL,
-            api_key=DASHSCOPE_API_KEY,
             max_chapters=MAX_CHAPTERS,
         )
 

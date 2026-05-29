@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.graph_builder import run_n1_n2
 from src.state.planning_state import PlanningState
-from src.utils.config import DASHSCOPE_API_KEY, DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
+from src.utils.config import DASHSCOPE_BASE_URL, DASHSCOPE_MODEL
 
 
 def save_output(state: PlanningState, output_dir: str = "novels/test-novel"):
@@ -49,7 +49,6 @@ def main():
             llm_provider="openai",
             llm_model=DASHSCOPE_MODEL,
             base_url=DASHSCOPE_BASE_URL,
-            api_key=DASHSCOPE_API_KEY,
         )
 
         if final_state.get("last_error"):

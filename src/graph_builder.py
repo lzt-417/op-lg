@@ -24,27 +24,12 @@ def build_planning_graph(
     llm_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
 ) -> StateGraph:
-    """
-    构建规划阶段的 LangGraph（N1-N5）
-
-    Args:
-        llm_provider: LLM provider（"openai" 或 "anthropic"）
-        llm_model: LLM 模型名称
-        xfq_root: XFQ-Project 根目录
-        base_url: 自定义 API 地址（用于兼容接口）
-        api_key: API Key
-
-    Returns:
-        编译后的 StateGraph
-    """
-    # 初始化组件
+    """构建规划阶段的 LangGraph（N1-N5）"""
     llm_client = LLMClient(
         provider=llm_provider,
         model=llm_model,
         base_url=base_url,
-        api_key=api_key,
     )
     template_adapter = TemplateAdapter(xfq_root=xfq_root)
     source_adapter = SourceDataAdapter(xfq_root=xfq_root)
@@ -105,12 +90,11 @@ def build_n1_n2_graph(
     llm_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
 ) -> StateGraph:
     """构建仅 N1-N2 的图（用于 Day 1 测试）"""
     llm_client = LLMClient(
         provider=llm_provider, model=llm_model,
-        base_url=base_url, api_key=api_key,
+        base_url=base_url,
     )
     template_adapter = TemplateAdapter(xfq_root=xfq_root)
     source_adapter = SourceDataAdapter(xfq_root=xfq_root)
@@ -138,12 +122,11 @@ def run_n1_n2(
     llm_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
 ) -> PlanningState:
     """运行 N1-N2 流程（Day 1）"""
     graph = build_n1_n2_graph(
         llm_provider=llm_provider, llm_model=llm_model,
-        xfq_root=xfq_root, base_url=base_url, api_key=api_key,
+        xfq_root=xfq_root, base_url=base_url,
     )
 
     initial_state: PlanningState = {
@@ -164,28 +147,13 @@ def run_n1_n5(
     llm_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
 ) -> PlanningState:
-    """
-    运行 N1-N5 流程
-
-    Args:
-        llm_provider: LLM provider（"openai" 或 "anthropic"）
-        llm_model: LLM 模型名称
-        xfq_root: XFQ-Project 根目录
-        base_url: 自定义 API 地址（用于兼容接口）
-        api_key: API Key
-
-    Returns:
-        最终状态
-    """
-    # 构建图
+    """运行 N1-N5 流程"""
     graph = build_planning_graph(
         llm_provider=llm_provider,
         llm_model=llm_model,
         xfq_root=xfq_root,
         base_url=base_url,
-        api_key=api_key,
     )
 
     # 初始状态
@@ -214,18 +182,12 @@ def run_n1_n7(
     llm_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
     max_chapters: int = 5,
 ) -> PlanningState:
-    """
-    运行 N1-N7 全流程
-
-    Args:
-        max_chapters: N7 最多写作章数（默认 5，节省 token）
-    """
+    """运行 N1-N7 全流程"""
     llm_client = LLMClient(
         provider=llm_provider, model=llm_model,
-        base_url=base_url, api_key=api_key,
+        base_url=base_url,
     )
     template_adapter = TemplateAdapter(xfq_root=xfq_root)
     source_adapter = SourceDataAdapter(xfq_root=xfq_root)
@@ -277,26 +239,17 @@ def run_n1_n9(
     review_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
     max_chapters: int = 5,
 ) -> PlanningState:
-    """
-    运行 N1-N9 全流程（写作 + 审改）
-
-    Args:
-        llm_model: N1-N7 使用的模型
-        review_model: N8-N9 使用的审查模型（默认同 llm_model）
-        max_chapters: 最多章数（默认 5，节省 token）
-    """
+    """运行 N1-N9 全流程（写作 + 审改）"""
     llm_client = LLMClient(
         provider=llm_provider, model=llm_model,
-        base_url=base_url, api_key=api_key,
+        base_url=base_url,
     )
-    # 审查阶段可用更强模型
     if review_model and review_model != llm_model:
         review_client = LLMClient(
             provider=llm_provider, model=review_model,
-            base_url=base_url, api_key=api_key,
+            base_url=base_url,
         )
         print(f"  N1-N7 模型: {llm_model}，N8-N9 模型: {review_model}")
     else:
@@ -370,27 +323,18 @@ def run_n1_n10(
     review_model: str = None,
     xfq_root: str = None,
     base_url: str = None,
-    api_key: str = None,
     max_chapters: int = 5,
     output_dir: str = "novels/test-novel",
 ) -> PlanningState:
-    """
-    运行 N1-N10 全流程（写作 + 审改 + 编译输出）
-
-    Args:
-        llm_model: N1-N7 使用的模型
-        review_model: N8-N9 使用的审查模型（默认同 llm_model）
-        max_chapters: 最多章数（默认 5，节省 token）
-        output_dir: 最终输出目录
-    """
+    """运行 N1-N10 全流程（写作 + 审改 + 编译输出）"""
     llm_client = LLMClient(
         provider=llm_provider, model=llm_model,
-        base_url=base_url, api_key=api_key,
+        base_url=base_url,
     )
     if review_model and review_model != llm_model:
         review_client = LLMClient(
             provider=llm_provider, model=review_model,
-            base_url=base_url, api_key=api_key,
+            base_url=base_url,
         )
         print(f"  N1-N7 模型: {llm_model}，N8-N9 模型: {review_model}")
     else:
