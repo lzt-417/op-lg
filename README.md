@@ -48,66 +48,6 @@ qy/
 └── requirements.txt       # Python 依赖
 ```
 
-## 迁移进度
-
-### Day 1：规划启动（N1 + N2）
-
-**已实现：**
-- 项目目录结构
-- PlanningState 状态定义
-- TemplateAdapter（读取 XFQ-Project 模板）
-- SourceDataAdapter（读取 XFQ-Project 源数据）
-- LLMClient（支持 OpenAI 和 Anthropic）
-- N1 节点：读者画像生成
-- N2 节点：概念设计
-- Graph 构建（N1 → N2 线性流）
-- Day 1 验证测试
-
-**测试结果：**
-- Adapter 层：[OK] 通过
-- N1 节点（dry run）：[OK] 通过
-
-### Day 2：设定 + 大纲 + 风格（N3 + N4 + N5）
-
-**已实现：**
-- N3 节点：世界观 + 角色设定 + 剧情关系图（2 次 LLM 调用）
-- N4 节点：全书大纲（逐 Arc 生成，支持 Hook Arc + Arc 1-N）
-- N5 节点：风格指纹（10 维度，含 AI 负面清单）
-- Graph 构建（N1 → N2 → N3 → N4 → N5 线性流）
-- Day 2 验证测试
-
-**测试结果：**
-- N3 产出（worldbuilding/characters/story_graph）：[OK] 通过
-- N4 产出（5 个 Arc 大纲，含 Logline + 章节标注）：[OK] 通过
-- N5 产出（style_fingerprint，含 POV + 禁用词表）：[OK] 通过
-
-### Day 3：写作（N6 + N7）
-
-**已实现：**
-- N6 节点：章纲生成（逐 Arc 提取章节，支持 max_chapters 限制）
-- N7 节点：正文写作（逐章生成，≥2200 字/章，支持 max_chapters 限制）
-- 输出验证（validators.py：大小、关键词、占位符检测）
-- 重试机制（retry_on_failure，最多 2 次重试）
-- Graph 构建（N1 → N2 → N3 → N4 → N5 → N6 → N7 线性流）
-
-**测试结果：**
-
-
-### Day 4：审改（N8 + N9）
-
-**已实现：**
-- N8 节点：三路审查（逻辑审查 + 对抗编辑 + 文笔审查）
-- N9 节点：合并修复（合并三份报告 → 生成修复指令 → 修复正文）
-- 审查指南（logic_review_guide / adversarial_edit_guide / prose_review_guide）
-- 合并规则（merge_rules）
-- AI 写作负面清单（ai_patterns_blacklist）
-- Graph 构建（N1 → ... → N7 → N8 → N9 线性流）
-
-**测试结果：**
-- N8 产出（logic-review / adversarial-review / prose-review）：[OK] 通过
-- N9 产出（editor-review + 修复后正文）：[OK] 通过
-
-### Day 5：交付 + 验证（N10）- 待实现
 
 ## 快速开始
 
